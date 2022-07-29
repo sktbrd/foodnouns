@@ -6,15 +6,61 @@ import Link from '../Link';
 import { Trans } from '@lingui/macro';
 
 const Documentation = () => {
-  const cryptopunksLink = (
+  const nounsdaoLink = (
     <Link
-      text={<Trans>Cryptopunks</Trans>}
-      url="https://www.larvalabs.com/cryptopunks"
+      text={<Trans>NounsDAO</Trans>}
+      url="https://nouns.wtf"
       leavesPage={true}
     />
   );
-  const playgroundLink = (
-    <Link text={<Trans>Playground</Trans>} url="/playground" leavesPage={false} />
+  const foodproductionLink = (
+    <Link
+      text={<Trans>Food Production and Innovation</Trans>}
+      url="https://foodnouns.notion.site/foodnouns/Food-Production-Innovation-5b226cd3e26e4d49821886877ff3f21d"
+      leavesPage={true}
+    />
+  );
+  const educationLink = (
+    <Link
+      text={<Trans>Education and Entertainment</Trans>}
+      url="https://foodnouns.notion.site/foodnouns/Education-Entertainment-edc1b47424f44434840e6b35bdfe182b"
+      leavesPage={true}
+    />
+  );
+  const foodandbevLink = (
+    <Link
+      text={<Trans>Food and Beverage Indsutry Wellness</Trans>}
+      url="https://foodnouns.notion.site/foodnouns/Food-Beverage-Industry-Wellness-a93e354112ea4a4e93e7f5395f354d3e"
+      leavesPage={true}
+    />
+  );
+  const funLink = (
+    <Link
+      text={<Trans>Fun</Trans>}
+      url="https://foodnouns.notion.site/foodnouns/FUN-eeb648bdcbb74ad4afc405b6d6019b45"
+      leavesPage={true}
+    />
+  );
+  const foodnounsdaoLink = (
+    <Link
+      text={<Trans>FOODNOUNS DAO</Trans>}
+      url="https://foodnouns.wtf/vote"
+      leavesPage={true}
+    />
+  );
+  const chefnotebookLink = (
+    <Link
+      text={<Trans>Chef Notebook</Trans>}
+      url="https://discourse.foodnouns.wtf"
+      leavesPage={true}
+    />
+  );
+  const testkitchenLink = (
+    <Link
+      text={<Trans>Test Kitchen</Trans>}
+      url="https://www.foodnouns.wtf/testkitchen"
+      leavesPage={true}
+    />
   );
   const publicDomainLink = (
     <Link
@@ -35,19 +81,20 @@ const Documentation = () => {
       <Col lg={{ span: 10, offset: 1 }}>
         <div className={classes.headerWrapper}>
           <h1>
-            <Trans>WTF?</Trans>
+            <Trans>A Tasty Fork!</Trans>
           </h1>
           <p className={classes.aboutText}>
             <Trans>
-              Nouns are an experimental attempt to improve the formation of on-chain avatar
-              communities. While projects such as {cryptopunksLink} have attempted to bootstrap
-              digital community and identity, Nouns attempt to bootstrap identity, community,
-              governance, and a treasury that can be used by the community.
+              FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community
+              bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day
+              builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},
+              {educationLink}, {foodandbevLink} and {funLink}!
             </Trans>
           </p>
           <p className={classes.aboutText} style={{ paddingBottom: '4rem' }}>
             <Trans>
-              Learn more below, or start creating Nouns off-chain using the {playgroundLink}.
+            Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}
+            or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}.
             </Trans>
           </p>
         </div>
@@ -59,40 +106,54 @@ const Documentation = () => {
             <Accordion.Body>
               <ul>
                 <li>
-                  <Trans>Nouns artwork is in the {publicDomainLink}.</Trans>
+                  <Trans>FOODNOUNS artwork is in the {publicDomainLink}.</Trans>
                 </li>
                 <li>
-                  <Trans>One Noun is trustlessly auctioned every 24 hours, forever.</Trans>
+                  <Trans>One FOODNOUN is trustlessly auctioned every 8 hours, forever.</Trans>
                 </li>
                 <li>
-                  <Trans>100% of Noun auction proceeds are trustlessly sent to the treasury.</Trans>
+                  <Trans>50% of FOODNOUNS auction proceeds are trustlessly sent to the treasury.</Trans>
+                </li>
+                <li>
+                  <Trans>25% of FOODNOUNS auction proceeds are trustlessly sent to the {nounsdaoLink}.</Trans>
+                </li>
+                <li>
+                  <Trans>15% of FOODNOUNS auction proceeds are trustlessly sent to the Kitchen Nouncil.</Trans>
+                </li>
+                <li>
+                  <Trans>10% of FOODNOUNS auction proceeds are trustlessly sent to the FOODNOUNDERS.</Trans>
                 </li>
                 <li>
                   <Trans>Settlement of one auction kicks off the next.</Trans>
                 </li>
                 <li>
-                  <Trans>All Nouns are members of Nouns DAO.</Trans>
+                  <Trans>All FOODNOUNS are members of FOODNOUNS DAO.</Trans>
                 </li>
                 <li>
-                  <Trans>Nouns DAO uses a fork of {compoundGovLink}.</Trans>
+                  <Trans>FOODNOUNS DAO uses a fork of {compoundGovLink}.</Trans>
                 </li>
                 <li>
-                  <Trans>One Noun is equal to one vote.</Trans>
+                  <Trans>One FOODNOUN is equal to one vote.</Trans>
                 </li>
                 <li>
-                  <Trans>The treasury is controlled exclusively by Nouns via governance.</Trans>
+                  <Trans>The treasury is controlled exclusively by FOODNOUNS via governance.</Trans>
                 </li>
                 <li>
                   <Trans>Artwork is generative and stored directly on-chain (not IPFS).</Trans>
                 </li>
                 <li>
                   <Trans>
-                    No explicit rules exist for attribute scarcity; all Nouns are equally rare.
+                    No explicit rules exist for attribute scarcity; all FOODNOUNS are equally rare.
                   </Trans>
                 </li>
                 <li>
                   <Trans>
-                    Nounders receive rewards in the form of Nouns (10% of supply for first 5 years).
+                    FOODNOUNDERS receive rewards in the form of FOODNOUNS (10% of supply for first year).
+                  </Trans>
+                </li>
+                <li>
+                  <Trans>
+                    Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years).
                   </Trans>
                 </li>
               </ul>
@@ -106,23 +167,24 @@ const Documentation = () => {
             <Accordion.Body>
               <p className={classes.aboutText}>
                 <Trans>
-                  The Nouns Auction Contract will act as a self-sufficient Noun generation and
-                  distribution mechanism, auctioning one Noun every 24 hours, forever. 100% of
-                  auction proceeds (ETH) are automatically deposited in the Nouns DAO treasury,
-                  where they are governed by Noun owners.
+                The FOODNOUNS Auction Contract will act as a self-sufficient FOODNOUN generation and
+                distribution mechanism, auctioning one FOODNOUN every 8 hours, forever. Auction
+                proceeds (ETH) are automatically deposited in the following ways: 50% to
+                FOODNOUNS DAO treasury which is governed by FOODNOUN owners, 25% to the NounsDAO
+                Treasury, 15% to the Kitchen Nouncil and the final 10% to the FOODNOUNDERS.
                 </Trans>
               </p>
 
               <p className={classes.aboutText}>
                 <Trans>
-                  Each time an auction is settled, the settlement transaction will also cause a new
-                  Noun to be minted and a new 24 hour auction to begin.{' '}
+                Each time an auction is settled, the settlement transaction will also cause a new
+                FOODNOUN to be minted and a new 8 hour activation to begin. {' '}
                 </Trans>
               </p>
               <p>
                 <Trans>
                   While settlement is most heavily incentivized for the winning bidder, it can be
-                  triggered by anyone, allowing the system to trustlessly auction Nouns as long as
+                  triggered by anyone, allowing the system to trustlessly auction FOODNOUNS as long as
                   Ethereum is operational and there are interested bidders.
                 </Trans>
               </p>
@@ -130,16 +192,15 @@ const Documentation = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="2" className={classes.accordionItem}>
             <Accordion.Header className={classes.accordionHeader}>
-              <Trans>Nouns DAO</Trans>
+              <Trans>FOODNOUNS DAO</Trans>
             </Accordion.Header>
             <Accordion.Body>
               <Trans>
-                Nouns DAO utilizes a fork of {compoundGovLink} and is the main governing body of the
-                Nouns ecosystem. The Nouns DAO treasury receives 100% of ETH proceeds from daily
-                Noun auctions. Each Noun is an irrevocable member of Nouns DAO and entitled to one
-                vote in all governance matters. Noun votes are non-transferable (if you sell your
+              The main governing body of the FOODNOUNS DAO ecosystem is a fork of {compoundGovLink}.
+                Each FOODNOUN is an irrevocable member of FOODNOUNS DAO and entitled to one
+                vote in all governance matters. FOODNOUN votes are non-transferable (if you sell your
                 Noun the vote goes with it) but delegatable, which means you can assign your vote to
-                someone else as long as you own your Noun.
+                someone else as long as you own your FOODNOUN.
               </Trans>
             </Accordion.Body>
           </Accordion.Item>
@@ -150,67 +211,31 @@ const Documentation = () => {
             <Accordion.Body>
               <p>
                 <Trans>
-                  The proposal veto right was initially envisioned as a temporary solution to the
-                  problem of ‘51% attacks’ on the Nouns DAO treasury. While Nounders initially
-                  believed that a healthy distribution of Nouns would be sufficient protection for
-                  the DAO, a more complete understanding of the incentives and risks has led to
-                  general consensus within the Nounders, the Nouns Foundation, and the wider
-                  community that a more robust game-theoretic solution should be implemented before
-                  the right is removed.
+                In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given
+                themselves a special veto right to ensure that no malicious proposals can be passed
+                while the FOODNOUN supply is low. This veto right will only be used if an obviously
+                harmful governance proposal  has been passed, and is intended as a last resort.
                 </Trans>
               </p>
               <p>
                 <Trans>
-                  The Nouns community has undertaken a preliminary exploration of proposal veto
-                  alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult
-                  problem that will require significantly more research, development and testing
-                  before a satisfactory solution can be implemented.
-                </Trans>
-              </p>
-              <p>
-                <Trans>
-                  Consequently, the Nouns Foundation anticipates being the steward of the veto power
-                  until Nouns DAO is ready to implement an alternative, and therefore wishes to
-                  clarify the conditions under which it would exercise this power.
-                </Trans>
-              </p>
-              <p>
-                <Trans>
-                  The Nouns Foundation considers the veto an emergency power that should not be
-                  exercised in the normal course of business. The Nouns Foundation will veto
-                  proposals that introduce non-trivial legal or existential risks to the Nouns DAO
-                  or the Nouns Foundation, including (but not necessarily limited to) proposals
-                  that:
-                </Trans>
-              </p>
-              <ul>
-                <li>unequally withdraw the treasury for personal gain</li>
-                <li>bribe voters to facilitate withdraws of the treasury for personal gain</li>
-                <li>
-                  attempt to alter Noun auction cadence for the purpose of maintaining or acquiring
-                  a voting majority
-                </li>
-                <li>make upgrades to critical smart contracts without undergoing an audit</li>
-              </ul>
-              <p>
-                <Trans>
-                  There are unfortunately no algorithmic solutions for making these determinations
-                  in advance (if there were, the veto would not be required), and proposals must be
-                  considered on a case by case basis.
+                FOODNOUNDERS will probably revoke this veto right when they deem it safe to do so.
+                This decision will be based on a healthy FOODNOUN distribution and a community that
+                is engaged in the governance process. 
                 </Trans>
               </p>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="4" className={classes.accordionItem}>
             <Accordion.Header className={classes.accordionHeader}>
-              <Trans>Noun Traits</Trans>
+              <Trans>FOODNOUN Traits</Trans>
             </Accordion.Header>
             <Accordion.Body>
               <p>
                 <Trans>
-                  Nouns are generated randomly based Ethereum block hashes. There are no 'if'
-                  statements or other rules governing Noun trait scarcity, which makes all Nouns
-                  equally rare. As of this writing, Nouns are made up of:
+                  FOODNOUNS are generated randomly based Ethereum block hashes. There are no 'if'
+                  statements or other rules governing Noun trait scarcity, which makes all FOODNOUNS
+                  equally rare. As of this writing, FOODNOUNS are made up of:
                 </Trans>
               </p>
               <ul>
@@ -218,20 +243,20 @@ const Documentation = () => {
                   <Trans>backgrounds (2) </Trans>
                 </li>
                 <li>
-                  <Trans>bodies (30)</Trans>
+                  <Trans>bodies (1)</Trans>
                 </li>
                 <li>
-                  <Trans>accessories (137) </Trans>
+                  <Trans>accessories (19) </Trans>
                 </li>
                 <li>
-                  <Trans>heads (234) </Trans>
+                  <Trans>heads (76) </Trans>
                 </li>
                 <li>
                   <Trans>glasses (21)</Trans>
                 </li>
               </ul>
               <Trans>
-                You can experiment with off-chain Noun generation at the {playgroundLink}.
+                You can experiment with off-chain FOODNOUN generation at the {testkitchenLink}.
               </Trans>
             </Accordion.Body>
           </Accordion.Item>
@@ -242,7 +267,7 @@ const Documentation = () => {
             <Accordion.Body>
               <p>
                 <Trans>
-                  Nouns are stored directly on Ethereum and do not utilize pointers to other
+                  FOODNOUNS are stored directly on Ethereum and do not utilize pointers to other
                   networks such as IPFS. This is possible because Noun parts are compressed and
                   stored on-chain using a custom run-length encoding (RLE), which is a form of
                   lossless compression.
@@ -262,14 +287,14 @@ const Documentation = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="6" className={classes.accordionItem}>
             <Accordion.Header className={classes.accordionHeader}>
-              <Trans>Noun Seeder Contract</Trans>
+              <Trans>FOODNOUN Seeder Contract</Trans>
             </Accordion.Header>
             <Accordion.Body>
               <p>
                 <Trans>
-                  The Noun Seeder contract is used to determine Noun traits during the minting
+                  The FOODNOUN Seeder contract is used to determine Noun traits during the minting
                   process. The seeder contract can be replaced to allow for future trait generation
-                  algorithm upgrades. Additionally, it can be locked by the Nouns DAO to prevent any
+                  algorithm upgrades. Additionally, it can be locked by the FOODNOUNS DAO to prevent any
                   future updates. Currently, Noun traits are determined using pseudo-random number
                   generation:
                 </Trans>
@@ -279,7 +304,7 @@ const Documentation = () => {
               <br />
               <p>
                 <Trans>
-                  Trait generation is not truly random. Traits can be predicted when minting a Noun
+                  Trait generation is not truly random. Traits can be predicted when minting a FOODNOUN
                   on the pending block.
                 </Trans>
               </p>
@@ -287,67 +312,85 @@ const Documentation = () => {
           </Accordion.Item>
           <Accordion.Item eventKey="7" className={classes.accordionItem}>
             <Accordion.Header className={classes.accordionHeader}>
-              <Trans>Nounder's Reward</Trans>
+              <Trans>FOODNOUNDER and Kitchen Nouncillor's Rewards</Trans>
             </Accordion.Header>
             <Accordion.Body>
               <p>
                 <Trans>
-                  'Nounders' are the group of ten builders that initiated Nouns. Here are the
-                  Nounders:
+                  'FOODNOUNDERS' are professional chefs turned degens who initiated FOODNOUNS.
+                  Here are the FOODNOUNDERS:
                 </Trans>
               </p>
               <ul>
                 <li>
-                  <Link
-                    text="@cryptoseneca"
-                    url="https://twitter.com/cryptoseneca"
-                    leavesPage={true}
-                  />
+                  <Link text="@artismyweapon_" url="https://twitter.com/artismyweapon_" leavesPage={true} />
                 </li>
                 <li>
-                  <Link text="@gremplin" url="https://twitter.com/gremplin" leavesPage={true} />
-                </li>
-                <li>
-                  <Link text="@punk4156" url="https://twitter.com/punk4156" leavesPage={true} />
-                </li>
-                <li>
-                  <Link text="@eboyarts" url="https://twitter.com/eBoyArts" leavesPage={true} />
-                </li>
-                <li>
-                  <Link text="@punk4464" url="https://twitter.com/punk4464" leavesPage={true} />
-                </li>
-                <li>solimander</li>
-                <li>
-                  <Link text="@dhof" url="https://twitter.com/dhof" leavesPage={true} />
-                </li>
-                <li>
-                  <Link text="@devcarrot" url="https://twitter.com/carrot_init" leavesPage={true} />
-                </li>
-                <li>
-                  <Link text="@TimpersHD" url="https://twitter.com/TimpersHD" leavesPage={true} />
-                </li>
-                <li>
-                  <Link
-                    text="@lastpunk9999"
-                    url="https://twitter.com/lastpunk9999"
-                    leavesPage={true}
-                  />
+                  <Link text="@cheffo_nft" url="https://twitter.com/cheffo_nft" leavesPage={true} />
                 </li>
               </ul>
               <p>
                 <Trans>
-                  Because 100% of Noun auction proceeds are sent to Nouns DAO, Nounders have chosen
-                  to compensate themselves with Nouns. Every 10th Noun for the first 5 years of the
-                  project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the
-                  Nounder's multisig to be vested and shared among the founding members of the
-                  project.
+                  Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on)
+                  will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the
+                  founding members of the project.
                 </Trans>
               </p>
               <p>
                 <Trans>
-                  Nounder distributions don't interfere with the cadence of 24 hour auctions. Nouns
-                  are sent directly to the Nounder's Multisig, and auctions continue on schedule
-                  with the next available Noun ID.
+                  'Kitchen Nounicllors' are food, technology and human enthusiasts that
+                  advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:
+                </Trans>
+              </p>
+              <ul>
+                <li>
+                  <Link text="@andrewladdusaw" url="https://twitter.com/AndrewLaddusaw" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@autoshi_nft" url="https://twitter.com/aubtoshi_nft" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@brennen_eth" url="https://twitter.com/brennen_eth" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@frankpepper12" url="https://twitter.com/FrankPepper12" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@flavorbank" url="https://twitter.com/Flavorbank" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="Kevin" url="https://twitter.com/foodnouns" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@mamaxargs" url="https://twitter.com/mamaxargs" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@nonodynamo_nft" url="https://twitter.com/Nonodynamo_NFT" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@reallyyummyfood" url="https://twitter.com/reallyyummyfood" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@robotfishgirl" url="https://twitter.com/RobotFishGirl" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@yanzero_" url="https://twitter.com/yanzero_" leavesPage={true} />
+                </li>
+                <li>
+                  <Link text="@youtrusteth" url="https://twitter.com/youtrusteth" leavesPage={true} />
+                </li>
+              </ul>
+              <p>
+                <Trans>
+                Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically
+                sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors.
+                </Trans>
+              </p>
+              <p>
+                <Trans>
+                  FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS
+                  are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule
+                  with the next available FOODNOUN ID.
                 </Trans>
               </p>
             </Accordion.Body>
