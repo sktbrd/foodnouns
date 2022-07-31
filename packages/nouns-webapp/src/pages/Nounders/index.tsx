@@ -16,64 +16,16 @@ import { Trans } from '@lingui/macro';
 
 const bios = [
   {
-    name: '4156',
-    image: pfp4156,
+    name: 'artismyweapon',
+    image: pfpartismyweapon,
     description: undefined,
-    handle: 'punk4156',
+    handle: 'artismyweapon_',
   },
   {
-    name: 'cryptoseneca',
-    image: pfpCryptoseneca,
+    name: 'cheffo',
+    image: pfpcheffo,
     description: undefined,
-    handle: 'cryptoseneca',
-  },
-  {
-    name: 'Kai@eboy',
-    image: pfpKai,
-    description: undefined,
-    handle: 'eBoyArts',
-  },
-  {
-    name: 'dom',
-    image: pfpDom,
-    description: undefined,
-    handle: 'dhof',
-  },
-  {
-    name: 'vapeape',
-    image: pfpVapeape,
-    description: undefined,
-    handle: 'punk4464',
-  },
-  {
-    name: 'gremplin',
-    image: pfpGremplin,
-    description: undefined,
-    handle: 'gremplin',
-  },
-  {
-    name: 'solimander',
-    image: pfpSolimander,
-    description: undefined,
-    handle: '_solimander_',
-  },
-  {
-    name: 'devcarrot',
-    image: pfpDevcarrot,
-    description: undefined,
-    handle: 'carrot_init',
-  },
-  {
-    name: 'timpers',
-    image: pfpTimpers,
-    description: undefined,
-    handle: 'TimpersHD',
-  },
-  {
-    name: '9999',
-    image: pfp9999,
-    description: undefined,
-    handle: 'lastpunk9999',
+    handle: 'cheffo_nft',
   },
 ];
 
@@ -145,18 +97,15 @@ const NoundersPage = () => {
         </h3>
         <p style={{ textAlign: 'justify' }}>
           <Trans>
-            All Noun auction proceeds are sent to the Nouns DAO. For this reason, we, the project's
-            founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th noun
-            for the first 5 years of the project will be sent to our multisig (5/10), where it will
-            be vested and distributed to individual Nounders.
+            Every 10th FOODNOUN for the first 5 years of the project will be sent to our multisig where it will
+            be vested and distributed to individual FOODNOUNDERS.
           </Trans>
         </p>
         <p style={{ textAlign: 'justify' }}>
           <Trans>
-            The Nounders reward is intended as compensation for our pre and post-launch
+            The FOODNOUNDER's reward is intended as compensation for our pre and post-launch
             contributions to the project, and to help us participate meaningfully in governance as
-            the project matures. Since there are 10 Nounders, after 5 years each Nounder could
-            receive up to 1% of the Noun supply.
+            the project matures.
           </Trans>
         </p>
       </Col>
