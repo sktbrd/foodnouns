@@ -86,7 +86,7 @@ const NoundersPage = () => {
           <Trans>The FOODNOUNDERS</Trans>
         </h2>
         <h3 style={{ marginBottom: '2rem' }}>
-          <Trans>2 chefs, artists and degens</Trans>
+          <Trans>2 chefs, artists and technologists</Trans>
         </h3>
         <Row style={{ marginBottom: '0rem' }}>
           <BioCards min={0} max={5} />
