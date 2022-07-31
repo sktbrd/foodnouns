@@ -266,12 +266,12 @@ const Playground: React.FC = () => {
               <Trans>Explore</Trans>
             </span>
             <h1>
-              <Trans>Playground</Trans>
+              <Trans>Test Kitchen</Trans>
             </h1>
             <p>
               <Trans>
-                The playground was built using the {nounsProtocolLink}. Noun's traits are determined
-                by the Noun Seed. The seed was generated using {nounsAssetsLink} and rendered using
+                The Test Kitchen was built using the {nounsProtocolLink}. FOODNOUN's traits are determined
+                by the FOODNOUN Seed. The seed was generated using {nounsAssetsLink} and rendered using
                 the {nounsSDKLink}.
               </Trans>
             </p>
@@ -286,7 +286,7 @@ const Playground: React.FC = () => {
                 }}
                 className={classes.primaryBtn}
               >
-                <Trans>Generate Nouns</Trans>
+                <Trans>Generate FOODNOUNS</Trans>
               </Button>
             </Col>
             <Row>
