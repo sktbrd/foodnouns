@@ -90,7 +90,7 @@ const NavBar = () => {
           <Navbar.Collapse className="justify-content-end">
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
-                buttonText={<Trans>DAO</Trans>}
+                buttonText={<Trans>FOODNOUNS DAO</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faUsers} />}
                 buttonStyle={nonWalletButtonStyle}
               />
@@ -103,7 +103,7 @@ const NavBar = () => {
               onClick={closeNav}
             >
               <NavBarButton
-                buttonText={<Trans>Docs</Trans>}
+                buttonText={<Trans>Chef Notebook</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faBookOpen} />}
                 buttonStyle={nonWalletButtonStyle}
               />
@@ -128,7 +128,7 @@ const NavBar = () => {
               onClick={closeNav}
             >
               <NavBarButton
-                buttonText={<Trans>Playground</Trans>}
+                buttonText={<Trans>Test Kitchen</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faPlay} />}
                 buttonStyle={nonWalletButtonStyle}
               />
