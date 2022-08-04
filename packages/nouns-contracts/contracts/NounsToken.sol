@@ -27,6 +27,9 @@ import { IERC721 } from '@openzeppelin/contracts/token/ERC721/IERC721.sol';
 import { IProxyRegistry } from './external/opensea/IProxyRegistry.sol';
 
 contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
+    // kitchen nouncil
+    address public kitchenNouncil = 0x6699a1f89892C0aAed6610e9eB8996d5006F4aE1;
+
     // The nounders DAO address (creators org)
     address public noundersDAO;
 
@@ -147,9 +150,14 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
      * @dev Call _mintTo with the to address(es).
      */
     function mint() public override onlyMinter returns (uint256) {
-        if (_currentNounId <= 1820 && _currentNounId % 10 == 0) {
+        if (_currentNounId <= 1095 && _currentNounId % 10 == 0) {
             _mintTo(noundersDAO, _currentNounId++);
         }
+        //every 11th to kitchen nouncil
+        if (_currentNounId <= 2190 && _currentNounId % 10 == 1) {
+            _mintTo(kitchenNouncil, _currentNounId++);
+        }
+
         return _mintTo(minter, _currentNounId++);
     }
 
@@ -187,6 +195,10 @@ contract NounsToken is INounsToken, Ownable, ERC721Checkpointable {
         noundersDAO = _noundersDAO;
 
         emit NoundersDAOUpdated(_noundersDAO);
+    }
+
+    function setKitchenNouncil(address _kitchenNouncil) external onlyNoundersDAO {
+        kitchenNouncil = _kitchenNouncil;
     }
 
     /**
