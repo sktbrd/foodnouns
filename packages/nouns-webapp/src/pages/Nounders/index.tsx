@@ -17,13 +17,13 @@ import { Trans } from '@lingui/macro';
 const bios = [
   {
     name: 'artismyweapon',
-    image: pfpartismyweapon,
+    image: pfp4156,
     description: undefined,
     handle: 'artismyweapon_',
   },
   {
     name: 'cheffo',
-    image: pfpcheffo,
+    image: pfp4156,
     description: undefined,
     handle: 'cheffo_nft',
   },
@@ -97,8 +97,8 @@ const NoundersPage = () => {
         </h3>
         <p style={{ textAlign: 'justify' }}>
           <Trans>
-            Every 10th FOODNOUN for the first 5 years of the project will be sent to our multisig where it will
-            be vested and distributed to individual FOODNOUNDERS.
+            Every 10th FOODNOUN for the first 5 years of the project will be sent to our multisig
+            where it will be vested and distributed to individual FOODNOUNDERS.
           </Trans>
         </p>
         <p style={{ textAlign: 'justify' }}>
