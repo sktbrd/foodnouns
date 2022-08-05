@@ -1,8 +1,8 @@
 {
-  "name": "Nouns",
-  "description": "One Noun, every day, forever.\r\n\r\nnouns.wtf",
-  "image": "ipfs://QmNdUibRHNqX2byJLtCD3ofn65cfCtvXdQnV87wRjqWf96",
-  "external_link": "https://nouns.wtf",
+  "name": "Foodnouns",
+  "description": "One Foodnoun, every breakfast, lunch & dinner forever.\r\n\r\nfoodnouns.wtf",
+  "image": "ipfs://QmcvmFmyarAWqxCuyuQC5iZJU7bQnVg1Zp222k8x5MWGYL",
+  "external_link": "https://foodnouns.wtf",
   "seller_fee_basis_points": 0,
   "fee_recipient": "0x0000000000000000000000000000000000000000"
 }
