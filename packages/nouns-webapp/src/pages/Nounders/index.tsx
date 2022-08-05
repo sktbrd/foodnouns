@@ -17,13 +17,13 @@ import { Trans } from '@lingui/macro';
 const bios = [
   {
     name: 'artismyweapon',
-    image: pfp4156,
+    image: pfpartismyweapon,
     description: undefined,
     handle: 'artismyweapon_',
   },
   {
     name: 'cheffo',
-    image: pfp4156,
+    image: pfpcheffo,
     description: undefined,
     handle: 'cheffo_nft',
   },
