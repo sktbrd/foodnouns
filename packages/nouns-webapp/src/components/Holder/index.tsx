@@ -33,7 +33,7 @@ const Holder: React.FC<HolderProps> = props => {
 
   const nonNounderNounContent = <ShortAddress size={40} address={holder} avatar={true} />;
 
-  const nounderNounContent = 'nounders.eth';
+  const nounderNounContent = 'Foodnounder/ KitchenNouncil';
 
   return (
     <>
