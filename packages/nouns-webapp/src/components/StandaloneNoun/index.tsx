@@ -25,8 +25,8 @@ interface StandaloneNounWithSeedProps {
 
 export const getNoun = (nounId: string | EthersBN, seed: INounSeed) => {
   const id = nounId.toString();
-  const name = `Noun ${id}`;
-  const description = `Noun ${id} is a member of the Nouns DAO`;
+  const name = `Foodnoun ${id}`;
+  const description = `Foodnoun ${id} is a member of the Foodnouns DAO`;
   const { parts, background } = getNounData(seed);
   const image = `data:image/svg+xml;base64,${btoa(buildSVG(parts, data.palette, background))}`;
 
