@@ -88,13 +88,13 @@ const Documentation = () => {
               FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community
               bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day
               builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},
-              {educationLink}, {foodandbevLink} and {funLink}!
+               {educationLink}, {foodandbevLink} and {funLink}!
             </Trans>
           </p>
           <p className={classes.aboutText} style={{ paddingBottom: '4rem' }}>
             <Trans>
             Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}
-            or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}.
+             or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}.
             </Trans>
           </p>
         </div>
