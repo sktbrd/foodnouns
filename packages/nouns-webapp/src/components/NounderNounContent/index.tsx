@@ -75,7 +75,6 @@ const NounderNounContent: React.FC<{
                 ` ${nounContentClasses.bidRow}`
               }
             >
-              <Trans>All Noun auction proceeds are sent to the Foodnounder or Nouns DAO. </Trans>{' '}
               <Trans>
                 Every 10th FOODNOUN will be sent to the FOODNOUNDER multi-sig for the first year and
                 every 11th FOODNOUN will be sent to the Kitchen Nouncil multi-sig for the first 2
