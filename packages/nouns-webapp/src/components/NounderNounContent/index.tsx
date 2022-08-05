@@ -81,10 +81,10 @@ const NounderNounContent: React.FC<{
               </Link>
               .{' '}
               <Trans>
-                For this reason, we, the project's founders (‘Nounders’) have chosen to compensate
-                ourselves with Nouns. Every 10th Noun for the first 5 years of the project will be
-                sent to our multisig (5/10), where it will be vested and distributed to individual
-                Nounders.
+                For this reason, we, the project's founders (‘FOODNOUNDERS’) have chosen to compensate
+                ourselves with FOODNOUNS. Every 10th FOODNOUN for the first year of the project will be
+                sent to our FOODNOUNDER multi-sig where they will be vested and distributed to individual
+                FOODNOUNDERS.
               </Trans>
             </li>
           </ul>
