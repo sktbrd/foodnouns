@@ -14,23 +14,51 @@ msgstr ""
 "Plural-Forms: \n"
 
 #: src/components/Documentation/index.tsx
-msgid "'Nounders' are the group of ten builders that initiated Nouns. Here are the Nounders:"
+msgid "'FOODNOUNDERS' are professional chefs turned degens who initiated FOODNOUNS. Here are the FOODNOUNDERS:"
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "'Kitchen Nounicllors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "'Nounders' are the group of ten builders that initiated Nouns. Here are the Nounders:"
+#~ msgstr ""
 
 #: src/components/ByLineHoverCard/index.tsx
 msgid "... and {0} more"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "100% of Noun auction proceeds are trustlessly sent to the treasury."
+msgid "10% of FOODNOUNS auction proceeds are trustlessly sent to the FOODNOUNDERS."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "100% of Noun auction proceeds are trustlessly sent to the treasury."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "15% of FOODNOUNS auction proceeds are trustlessly sent to the Kitchen Nouncil."
 msgstr ""
 
 #: src/pages/Nounders/index.tsx
-msgid "3.5 artists, 6.5 technologists"
+msgid "2 chefs, artists and technologists"
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "25% of FOODNOUNS auction proceeds are trustlessly sent to the {nounsdaoLink}."
+msgstr ""
+
+#: src/pages/Nounders/index.tsx
+#~ msgid "3.5 artists, 6.5 technologists"
+#~ msgstr ""
 
 #: src/pages/NotFound/index.tsx
 msgid "404: This is not the person, place, or thing you're looking for..."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "50% of FOODNOUNS auction proceeds are trustlessly sent to the treasury."
 msgstr ""
 
 #: src/components/ByLineHoverCard/index.tsx
@@ -43,6 +71,10 @@ msgstr ""
 
 #: src/components/ProposalHeader/index.tsx
 msgid "<0>Proposed by: </0><1>{proposer}</1><2>{proposedAtTransactionHash}</2>"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "A Tasty Fork!"
 msgstr ""
 
 #: src/components/NounProfileVoteRow/index.tsx
@@ -103,17 +135,25 @@ msgstr ""
 msgid "Against"
 msgstr ""
 
-#: src/components/NounderNounContent/index.tsx
-msgid "All Noun auction proceeds are sent to the"
+#: src/components/Documentation/index.tsx
+msgid "All FOODNOUNS are members of FOODNOUNS DAO."
 msgstr ""
+
+#: src/components/NounderNounContent/index.tsx
+#~ msgid "All Noun auction proceeds are sent to the"
+#~ msgstr ""
+
+#: src/components/NounderNounContent/index.tsx
+#~ msgid "All Noun auction proceeds are sent to the Foodnounder or Nouns DAO."
+#~ msgstr ""
 
 #: src/pages/Nounders/index.tsx
-msgid "All Noun auction proceeds are sent to the Nouns DAO. For this reason, we, the project's founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th noun for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Nounders."
-msgstr ""
+#~ msgid "All Noun auction proceeds are sent to the Nouns DAO. For this reason, we, the project's founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th noun for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Nounders."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "All Nouns are members of Nouns DAO."
-msgstr ""
+#~ msgid "All Nouns are members of Nouns DAO."
+#~ msgstr ""
 
 #: src/pages/CreateProposal/index.tsx
 msgid "All Proposals"
@@ -149,8 +189,8 @@ msgid "Background"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Because 100% of Noun auction proceeds are sent to Nouns DAO, Nounders have chosen to compensate themselves with Nouns. Every 10th Noun for the first 5 years of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the Nounder's multisig to be vested and shared among the founding members of the project."
-msgstr ""
+#~ msgid "Because 100% of Noun auction proceeds are sent to Nouns DAO, Nounders have chosen to compensate themselves with Nouns. Every 10th Noun for the first 5 years of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the Nounder's multisig to be vested and shared among the founding members of the project."
+#~ msgstr ""
 
 #: src/components/Bid/index.tsx
 #: src/components/Bid/index.tsx
@@ -211,6 +251,11 @@ msgstr ""
 msgid "Change"
 msgstr ""
 
+#: src/components/Documentation/index.tsx
+#: src/components/NavBar/index.tsx
+msgid "Chef Notebook"
+msgstr ""
+
 #: src/components/WalletConnectModal/index.tsx
 msgid "Clear WalletConnect Data"
 msgstr ""
@@ -242,8 +287,8 @@ msgid "Connect your wallet"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Consequently, the Nouns Foundation anticipates being the steward of the veto power until Nouns DAO is ready to implement an alternative, and therefore wishes to clarify the conditions under which it would exercise this power."
-msgstr ""
+#~ msgid "Consequently, the Nouns Foundation anticipates being the steward of the veto power until Nouns DAO is ready to implement an alternative, and therefore wishes to clarify the conditions under which it would exercise this power."
+#~ msgstr ""
 
 #: src/components/CreateProposalButton/index.tsx
 #: src/pages/CreateProposal/index.tsx
@@ -251,8 +296,8 @@ msgid "Create Proposal"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Cryptopunks"
-msgstr ""
+#~ msgid "Cryptopunks"
+#~ msgstr ""
 
 #: src/components/CurrentDelegatePannel/index.tsx
 msgid "Current Delegate"
@@ -263,8 +308,8 @@ msgid "Current bid"
 msgstr ""
 
 #: src/components/NavBar/index.tsx
-msgid "DAO"
-msgstr ""
+#~ msgid "DAO"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
 msgid "Daily Auctions"
@@ -314,19 +359,31 @@ msgid "Discord"
 msgstr ""
 
 #: src/components/NavBar/index.tsx
-msgid "Discourse"
-msgstr ""
+#~ msgid "Discourse"
+#~ msgstr ""
 
 #: src/components/NavBar/index.tsx
-msgid "Docs"
+#~ msgid "Docs"
+#~ msgstr ""
+
+#: src/components/Banner/index.tsx
+msgid "EVERY BREAKFAST, LUNCH & DINNER"
 msgstr ""
 
 #: src/components/Banner/index.tsx
-msgid "EVERY DAY,"
+#~ msgid "EVERY DAY,"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Each time an auction is settled, the settlement transaction will also cause a new FOODNOUN to be minted and a new 8 hour activation to begin."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Each time an auction is settled, the settlement transaction will also cause a new Noun to be minted and a new 24 hour auction to begin."
+#~ msgid "Each time an auction is settled, the settlement transaction will also cause a new Noun to be minted and a new 24 hour auction to begin."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Education and Entertainment"
 msgstr ""
 
 #: src/pages/Vote/index.tsx
@@ -366,6 +423,22 @@ msgstr ""
 msgid "Etherscan"
 msgstr ""
 
+#: src/pages/Nounders/index.tsx
+msgid "Every 10th FOODNOUN for the first 5 years of the project will be sent to our multisig where it will be vested and distributed to individual FOODNOUNDERS."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
+msgstr ""
+
+#: src/components/NounderNounContent/index.tsx
+msgid "Every 10th FOODNOUN will be sent to the FOODNOUNDER multi-sig for the first year and every 11th FOODNOUN will be sent to the Kitchen Nouncil multi-sig for the first 2 years where they will be vested and distributed to individual founding members."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
+msgstr ""
+
 #: src/pages/Vote/index.tsx
 msgid "Execute"
 msgstr ""
@@ -388,6 +461,68 @@ msgstr ""
 msgid "Explore"
 msgstr ""
 
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUN Seeder Contract"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUN Traits"
+msgstr ""
+
+#: src/components/AuctionActivityNounTitle/index.tsx
+msgid "FOODNOUN {0}"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule with the next available FOODNOUN ID."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNDER and Kitchen Nouncillor's Rewards"
+msgstr ""
+
+#: src/pages/Nounders/index.tsx
+msgid "FOODNOUNDER's Reward"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNDERS receive rewards in the form of FOODNOUNS (10% of supply for first year)."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNDERS will probably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy FOODNOUN distribution and a community that is engaged in the governance process."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#: src/components/Documentation/index.tsx
+#: src/pages/Governance/index.tsx
+msgid "FOODNOUNS DAO"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNS DAO uses a fork of {compoundGovLink}."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNS are generated randomly based Ethereum block hashes. There are no 'if' statements or other rules governing Noun trait scarcity, which makes all FOODNOUNS equally rare. As of this writing, FOODNOUNS are made up of:"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNS are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Noun parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNS artwork is in the {publicDomainLink}."
+msgstr ""
+
+#: src/pages/Governance/index.tsx
+msgid "FOODNOUNS govern <0>FOODNOUNS DAO</0>. FOODNOUNS can vote on proposals or delegate their vote to a third party. A minimum of <1>{nounsRequired} {0}</1> is required to submit proposals."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+msgstr ""
+
 #: src/components/Banner/index.tsx
 msgid "FOREVER."
 msgstr ""
@@ -405,16 +540,36 @@ msgstr ""
 msgid "Failed to fetch Noun info"
 msgstr ""
 
+#: src/components/Documentation/index.tsx
+msgid "Food Production and Innovation"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Food and Beverage Indsutry Wellness"
+msgstr ""
+
+#: src/components/NavBar/index.tsx
+msgid "Foodnouns DAO"
+msgstr ""
+
 #: src/components/VoteCard/index.tsx
 msgid "For"
 msgstr ""
 
 #: src/components/NounderNounContent/index.tsx
-msgid "For this reason, we, the project's founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th Noun for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Nounders."
-msgstr ""
+#~ msgid "For this reason, we, the project's founders (‘FOODNOUNDERS’) have chosen to compensate ourselves with FOODNOUNS. Every 10th FOODNOUN for the first year of the project will be sent to our FOODNOUNDER multi-sig where they will be vested and distributed to individual FOODNOUNDERS."
+#~ msgstr ""
+
+#: src/components/NounderNounContent/index.tsx
+#~ msgid "For this reason, we, the project's founders (‘Nounders’) have chosen to compensate ourselves with Nouns. Every 10th Noun for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Nounders."
+#~ msgstr ""
 
 #: src/components/Footer/index.tsx
-msgid "Forums"
+#~ msgid "Forums"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Fun"
 msgstr ""
 
 #: src/components/ProposalTransactionFormModal/index.tsx
@@ -426,8 +581,12 @@ msgid "Function (Optional)"
 msgstr ""
 
 #: src/pages/Playground/index.tsx
-msgid "Generate Nouns"
+msgid "Generate FOODNOUNS"
 msgstr ""
+
+#: src/pages/Playground/index.tsx
+#~ msgid "Generate Nouns"
+#~ msgstr ""
 
 #: src/pages/Playground/index.tsx
 msgid "Glasses"
@@ -455,7 +614,11 @@ msgid "Held by"
 msgstr ""
 
 #: src/components/AuctionActivity/index.tsx
-msgid "Help mint the next Noun"
+#~ msgid "Help mint the next Noun"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal  has been passed, and is intended as a last resort."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
@@ -464,6 +627,10 @@ msgstr ""
 
 #: src/components/Bid/index.tsx
 msgid "Insufficient bid amount 🤏"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
 msgstr ""
 
 #: src/components/NavLocaleSwitcher/index.tsx
@@ -475,8 +642,12 @@ msgid "Learn more"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more below, or start creating Nouns off-chain using the {playgroundLink}."
+msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Learn more below, or start creating Nouns off-chain using the {playgroundLink}."
+#~ msgstr ""
 
 #: src/components/NounInfoRowHolder/index.tsx
 msgid "Loading..."
@@ -491,8 +662,12 @@ msgid "No arguments required"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "No explicit rules exist for attribute scarcity; all Nouns are equally rare."
+msgid "No explicit rules exist for attribute scarcity; all FOODNOUNS are equally rare."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "No explicit rules exist for attribute scarcity; all Nouns are equally rare."
+#~ msgstr ""
 
 #: src/components/Proposals/index.tsx
 msgid "No proposals found"
@@ -509,40 +684,40 @@ msgid "Noun"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Noun Seeder Contract"
-msgstr ""
+#~ msgid "Noun Seeder Contract"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Noun Traits"
-msgstr ""
+#~ msgid "Noun Traits"
+#~ msgstr ""
 
 #: src/components/CurrentDelegatePannel/index.tsx
 msgid "Noun votes are not transferable, but are <0>delegatable</0>, which means you can assign your vote to someone else as long as you own your Noun."
 msgstr ""
 
 #: src/components/AuctionActivityNounTitle/index.tsx
-msgid "Noun {0}"
-msgstr ""
+#~ msgid "Noun {0}"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nounder distributions don't interfere with the cadence of 24 hour auctions. Nouns are sent directly to the Nounder's Multisig, and auctions continue on schedule with the next available Noun ID."
-msgstr ""
+#~ msgid "Nounder distributions don't interfere with the cadence of 24 hour auctions. Nouns are sent directly to the Nounder's Multisig, and auctions continue on schedule with the next available Noun ID."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nounder's Reward"
-msgstr ""
+#~ msgid "Nounder's Reward"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nounders receive rewards in the form of Nouns (10% of supply for first 5 years)."
-msgstr ""
+#~ msgid "Nounders receive rewards in the form of Nouns (10% of supply for first 5 years)."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
 #~ msgid "Nounders will proveably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy Noun distribution and a community that is engaged in the governance process."
 #~ msgstr ""
 
 #: src/pages/Nounders/index.tsx
-msgid "Nounders' Reward"
-msgstr ""
+#~ msgid "Nounders' Reward"
+#~ msgstr ""
 
 #: src/pages/Governance/index.tsx
 msgid "Nouns"
@@ -552,42 +727,44 @@ msgstr ""
 msgid "Nouns Auction House"
 msgstr ""
 
-#: src/components/Documentation/index.tsx
 #: src/components/NounderNounContent/index.tsx
-#: src/pages/Governance/index.tsx
-msgid "Nouns DAO"
-msgstr ""
+#~ msgid "Nouns DAO"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns DAO uses a fork of {compoundGovLink}."
-msgstr ""
+#~ msgid "Nouns DAO uses a fork of {compoundGovLink}."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns DAO utilizes a fork of {compoundGovLink} and is the main governing body of the Nouns ecosystem. The Nouns DAO treasury receives 100% of ETH proceeds from daily Noun auctions. Each Noun is an irrevocable member of Nouns DAO and entitled to one vote in all governance matters. Noun votes are non-transferable (if you sell your Noun the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your Noun."
-msgstr ""
+#~ msgid "Nouns DAO utilizes a fork of {compoundGovLink} and is the main governing body of the Nouns ecosystem. The Nouns DAO treasury receives 100% of ETH proceeds from daily Noun auctions. Each Noun is an irrevocable member of Nouns DAO and entitled to one vote in all governance matters. Noun votes are non-transferable (if you sell your Noun the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your Noun."
+#~ msgstr ""
 
 #: src/pages/Playground/index.tsx
 msgid "Nouns Protocol"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as {cryptopunksLink} have attempted to bootstrap digital community and identity, Nouns attempt to bootstrap identity, community, governance, and a treasury that can be used by the community."
-msgstr ""
+#~ msgid "Nouns are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as {cryptopunksLink} have attempted to bootstrap digital community and identity, Nouns attempt to bootstrap identity, community, governance, and a treasury that can be used by the community."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns are generated randomly based Ethereum block hashes. There are no 'if' statements or other rules governing Noun trait scarcity, which makes all Nouns equally rare. As of this writing, Nouns are made up of:"
-msgstr ""
+#~ msgid "Nouns are generated randomly based Ethereum block hashes. There are no 'if' statements or other rules governing Noun trait scarcity, which makes all Nouns equally rare. As of this writing, Nouns are made up of:"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Noun parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
-msgstr ""
+#~ msgid "Nouns are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Noun parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Nouns artwork is in the {publicDomainLink}."
-msgstr ""
+#~ msgid "Nouns artwork is in the {publicDomainLink}."
+#~ msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "Nouns govern <0>Nouns DAO</0>. Nouns can vote on proposals or delegate their vote to a third party. A minimum of <1>{nounsRequired} {0}</1> is required to submit proposals."
+#~ msgid "Nouns govern <0>Nouns DAO</0>. Nouns can vote on proposals or delegate their vote to a third party. A minimum of <1>{nounsRequired} {0}</1> is required to submit proposals."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "NounsDAO"
 msgstr ""
 
 #: src/components/DelegationCandidateInfo/index.tsx
@@ -595,20 +772,32 @@ msgid "Now has"
 msgstr ""
 
 #: src/components/Banner/index.tsx
-msgid "ONE NOUN,"
+msgid "ONE FOODNOUN,"
 msgstr ""
+
+#: src/components/Banner/index.tsx
+#~ msgid "ONE NOUN,"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
 msgid "On-Chain Artwork"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "One Noun is equal to one vote."
+msgid "One FOODNOUN is equal to one vote."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "One Noun is trustlessly auctioned every 24 hours, forever."
+msgid "One FOODNOUN is trustlessly auctioned every 8 hours, forever."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "One Noun is equal to one vote."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "One Noun is trustlessly auctioned every 24 hours, forever."
+#~ msgstr ""
 
 #: src/pages/Playground/index.tsx
 msgid "Only 32x32 PNG images are accepted"
@@ -632,8 +821,8 @@ msgstr ""
 #: src/components/Documentation/index.tsx
 #: src/components/NavBar/index.tsx
 #: src/pages/Playground/index.tsx
-msgid "Playground"
-msgstr ""
+#~ msgid "Playground"
+#~ msgstr ""
 
 #: src/components/Bid/index.tsx
 msgid "Please place a bid higher than or equal to the minimum bid amount of {0} ETH"
@@ -801,53 +990,87 @@ msgstr ""
 msgid "Taken at block"
 msgstr ""
 
+#: src/components/Documentation/index.tsx
+#: src/components/NavBar/index.tsx
+#: src/pages/Playground/index.tsx
+msgid "Test Kitchen"
+msgstr ""
+
 #: src/components/VoteModal/index.tsx
 msgid "Thank you for voting."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The Noun Seeder contract is used to determine Noun traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the Nouns DAO to prevent any future updates. Currently, Noun traits are determined using pseudo-random number generation:"
+msgid "The FOODNOUN Seeder contract is used to determine Noun traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the FOODNOUNS DAO to prevent any future updates. Currently, Noun traits are determined using pseudo-random number generation:"
 msgstr ""
 
 #: src/pages/Nounders/index.tsx
-msgid "The Nounders"
+msgid "The FOODNOUNDER's reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures."
 msgstr ""
 
 #: src/pages/Nounders/index.tsx
-msgid "The Nounders reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures. Since there are 10 Nounders, after 5 years each Nounder could receive up to 1% of the Noun supply."
+msgid "The FOODNOUNDERS"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The Nouns Auction Contract will act as a self-sufficient Noun generation and distribution mechanism, auctioning one Noun every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Nouns DAO treasury, where they are governed by Noun owners."
+msgid "The FOODNOUNS Auction Contract will act as a self-sufficient FOODNOUN generation and distribution mechanism, auctioning one FOODNOUN every 8 hours, forever. Auction proceeds (ETH) are automatically deposited in the following ways: 50% to FOODNOUNS DAO treasury which is governed by FOODNOUN owners, 25% to the NounsDAO Treasury, 15% to the Kitchen Nouncil and the final 10% to the FOODNOUNDERS."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The Nouns Foundation considers the veto an emergency power that should not be exercised in the normal course of business. The Nouns Foundation will veto proposals that introduce non-trivial legal or existential risks to the Nouns DAO or the Nouns Foundation, including (but not necessarily limited to) proposals that:"
-msgstr ""
+#~ msgid "The Noun Seeder contract is used to determine Noun traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the Nouns DAO to prevent any future updates. Currently, Noun traits are determined using pseudo-random number generation:"
+#~ msgstr ""
+
+#: src/pages/Nounders/index.tsx
+#~ msgid "The Nounders"
+#~ msgstr ""
+
+#: src/pages/Nounders/index.tsx
+#~ msgid "The Nounders reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures. Since there are 10 Nounders, after 5 years each Nounder could receive up to 1% of the Noun supply."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The Nouns community has undertaken a preliminary exploration of proposal veto alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult problem that will require significantly more research, development and testing before a satisfactory solution can be implemented."
+#~ msgid "The Nouns Auction Contract will act as a self-sufficient Noun generation and distribution mechanism, auctioning one Noun every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Nouns DAO treasury, where they are governed by Noun owners."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The Nouns Foundation considers the veto an emergency power that should not be exercised in the normal course of business. The Nouns Foundation will veto proposals that introduce non-trivial legal or existential risks to the Nouns DAO or the Nouns Foundation, including (but not necessarily limited to) proposals that:"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The Nouns community has undertaken a preliminary exploration of proposal veto alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult problem that will require significantly more research, development and testing before a satisfactory solution can be implemented."
+#~ msgstr ""
+
+#: src/pages/Playground/index.tsx
+msgid "The Test Kitchen was built using the {nounsProtocolLink}. FOODNOUN's traits are determined by the FOODNOUN Seed. The seed was generated using {nounsAssetsLink} and rendered using the {nounsSDKLink}."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
 msgid "The compressed parts are efficiently converted into a single base64 encoded SVG image on-chain. To accomplish this, each part is decoded into an intermediate format before being converted into a series of SVG rects using batched, on-chain string concatenation. Once the entire SVG has been generated, it is base64 encoded."
 msgstr ""
 
+#: src/components/Documentation/index.tsx
+msgid "The main governing body of the FOODNOUNS DAO ecosystem is a fork of {compoundGovLink}. Each FOODNOUN is an irrevocable member of FOODNOUNS DAO and entitled to one vote in all governance matters. FOODNOUN votes are non-transferable (if you sell your Noun the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your FOODNOUN."
+msgstr ""
+
 #: src/pages/Playground/index.tsx
-msgid "The playground was built using the {nounsProtocolLink}. Noun's traits are determined by the Noun Seed. The seed was generated using {nounsAssetsLink} and rendered using the {nounsSDKLink}."
+#~ msgid "The playground was built using the {nounsProtocolLink}. Noun's traits are determined by the Noun Seed. The seed was generated using {nounsAssetsLink} and rendered using the {nounsSDKLink}."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The proposal veto right was initially envisioned as a temporary solution to the problem of ‘51% attacks’ on the Nouns DAO treasury. While Nounders initially believed that a healthy distribution of Nouns would be sufficient protection for the DAO, a more complete understanding of the incentives and risks has led to general consensus within the Nounders, the Nouns Foundation, and the wider community that a more robust game-theoretic solution should be implemented before the right is removed."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "The treasury is controlled exclusively by FOODNOUNS via governance."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The proposal veto right was initially envisioned as a temporary solution to the problem of ‘51% attacks’ on the Nouns DAO treasury. While Nounders initially believed that a healthy distribution of Nouns would be sufficient protection for the DAO, a more complete understanding of the incentives and risks has led to general consensus within the Nounders, the Nouns Foundation, and the wider community that a more robust game-theoretic solution should be implemented before the right is removed."
-msgstr ""
+#~ msgid "The treasury is controlled exclusively by Nouns via governance."
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The treasury is controlled exclusively by Nouns via governance."
-msgstr ""
-
-#: src/components/Documentation/index.tsx
-msgid "There are unfortunately no algorithmic solutions for making these determinations in advance (if there were, the veto would not be required), and proposals must be considered on a case by case basis."
-msgstr ""
+#~ msgid "There are unfortunately no algorithmic solutions for making these determinations in advance (if there were, the veto would not be required), and proposals must be considered on a case by case basis."
+#~ msgstr ""
 
 #: src/components/VoteModal/index.tsx
 msgid "There was an error voting for your account."
@@ -858,8 +1081,12 @@ msgid "This Noun has no activity, since it was just created. Check back soon!"
 msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "This treasury exists for <0>Nouns DAO</0> participants to allocate resources for the long-term growth and prosperity of the Nouns project."
+msgid "This treasury exists for <0>FOODNOUNS DAO</0> participants to allocate resources for the long-term growth and prosperity of the FOODNOUNS project."
 msgstr ""
+
+#: src/pages/Governance/index.tsx
+#~ msgid "This treasury exists for <0>Nouns DAO</0> participants to allocate resources for the long-term growth and prosperity of the Nouns project."
+#~ msgstr ""
 
 #: src/pages/Vote/index.tsx
 msgid "Threshold"
@@ -874,8 +1101,12 @@ msgid "Tip:"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "Trait generation is not truly random. Traits can be predicted when minting a Noun on the pending block."
+msgid "Trait generation is not truly random. Traits can be predicted when minting a FOODNOUN on the pending block."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Trait generation is not truly random. Traits can be predicted when minting a Noun on the pending block."
+#~ msgstr ""
 
 #: src/components/Bid/index.tsx
 #: src/components/Bid/index.tsx
@@ -946,8 +1177,8 @@ msgid "View on Etherscan"
 msgstr ""
 
 #: src/components/Bid/index.tsx
-msgid "Vote for the next Noun"
-msgstr ""
+#~ msgid "Vote for the next Noun"
+#~ msgstr ""
 
 #: src/components/VoteModal/index.tsx
 msgid "Vote on Prop {0}"
@@ -974,8 +1205,8 @@ msgid "Voted with<0>{numVotesForProp}</0>Nouns"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "WTF?"
-msgstr ""
+#~ msgid "WTF?"
+#~ msgstr ""
 
 #: src/components/NounProfileVoteRow/index.tsx
 msgid "Waiting for"
@@ -987,8 +1218,12 @@ msgid "What now?"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "While settlement is most heavily incentivized for the winning bidder, it can be triggered by anyone, allowing the system to trustlessly auction Nouns as long as Ethereum is operational and there are interested bidders."
+msgid "While settlement is most heavily incentivized for the winning bidder, it can be triggered by anyone, allowing the system to trustlessly auction FOODNOUNS as long as Ethereum is operational and there are interested bidders."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "While settlement is most heavily incentivized for the winning bidder, it can be triggered by anyone, allowing the system to trustlessly auction Nouns as long as Ethereum is operational and there are interested bidders."
+#~ msgstr ""
 
 #: src/components/DelegationCandidateInfo/index.tsx
 msgid "Will have"
@@ -1016,8 +1251,12 @@ msgid "You already have an active or pending proposal"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "You can experiment with off-chain Noun generation at the {playgroundLink}."
+msgid "You can experiment with off-chain FOODNOUN generation at the {testkitchenLink}."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "You can experiment with off-chain Noun generation at the {playgroundLink}."
+#~ msgstr ""
 
 #: src/components/SettleManuallyBtn/index.tsx
 msgid "You can settle manually in 1 minute"
@@ -1056,8 +1295,12 @@ msgid "You've already delegated to this address"
 msgstr ""
 
 #: src/pages/Playground/index.tsx
-msgid "You've generated {0} years worth of Nouns"
+msgid "You've generated {0} years worth of FOODNOUNS!"
 msgstr ""
+
+#: src/pages/Playground/index.tsx
+#~ msgid "You've generated {0} years worth of Nouns"
+#~ msgstr ""
 
 #: src/components/VoteModal/index.tsx
 msgid "You've successfully voted on on prop {0}"
@@ -1072,7 +1315,11 @@ msgid "Your <0>{availableVotes}</0> votes have been delegated to a new account."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "accessories (137)"
+#~ msgid "accessories (137)"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "accessories (19)"
 msgstr ""
 
 #: src/components/AuctionTimer/index.tsx
@@ -1088,8 +1335,12 @@ msgid "backgrounds (2)"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "bodies (30)"
+msgid "bodies (1)"
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "bodies (30)"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
 msgid "glasses (21)"
@@ -1100,7 +1351,11 @@ msgid "h"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "heads (234)"
+#~ msgid "heads (234)"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "heads (76)"
 msgstr ""
 
 #: src/components/AuctionTimer/index.tsx
