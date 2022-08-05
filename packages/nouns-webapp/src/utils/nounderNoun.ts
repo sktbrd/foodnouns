@@ -3,7 +3,7 @@ import { AuctionState } from '../state/slices/auction';
 import { BigNumber } from '@ethersproject/bignumber';
 
 export const isNounderNoun = (nounId: BigNumber) => {
-  return nounId.mod(10).eq(0) || nounId.eq(0) || nounId.mod(10).eq(1);
+  return nounId.mod(10).eq(0) || nounId.eq(0) || nounId.mod(10).eq(1) || nounId.eq(1);
 };
 
 const emptyNounderAuction = (onDisplayAuctionId: number): Auction => {
