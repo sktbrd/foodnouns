@@ -55,7 +55,7 @@ const Winner: React.FC<WinnerProps> = props => {
     <ShortAddress size={40} address={winner} avatar={true} />
   );
 
-  const nounderNounContent = 'Foodnounder/ nounsDAO';
+  const nounderNounContent = 'Foodnounder/ KitchenNouncil';
 
   return (
     <>
