@@ -18,3 +18,4 @@ export * from './populate-descriptor-via-proposal';
 export * from './deploy-test-token';
 export * from './populate-descriptor-v1';
 export * from './upgrade-descriptor-via-proposal';
+export * from './unpause';
