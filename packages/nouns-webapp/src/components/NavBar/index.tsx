@@ -21,7 +21,6 @@ import NavBarTreasury from '../NavBarTreasury';
 import NavWallet from '../NavWallet';
 import { Trans } from '@lingui/macro';
 import React, { useState } from 'react';
-import NavLocaleSwitcher from '../NavLocaleSwitcher';
 
 const NavBar = () => {
   const activeAccount = useAppSelector(state => state.account.activeAccount);
@@ -90,7 +89,7 @@ const NavBar = () => {
           <Navbar.Collapse className="justify-content-end">
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
-                buttonText={<Trans>DAO</Trans>}
+                buttonText={<Trans>Foodnouns DAO</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faUsers} />}
                 buttonStyle={nonWalletButtonStyle}
               />
@@ -105,19 +104,6 @@ const NavBar = () => {
               <NavBarButton
                 buttonText={<Trans>Chef Notebook</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faBookOpen} />}
-                buttonStyle={nonWalletButtonStyle}
-              />
-            </Nav.Link>
-            <Nav.Link
-              href={externalURL(ExternalURL.discourse)}
-              className={classes.nounsNavLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeNav}
-            >
-              <NavBarButton
-                buttonText={<Trans>Discourse</Trans>}
-                buttonIcon={<FontAwesomeIcon icon={faComments} />}
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
