@@ -331,7 +331,7 @@ const Documentation = () => {
               </ul>
               <p>
                 <Trans>
-                  Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on)
+                  Every 10th FOODNOUN for the first year of the project (FOODNOUN ids #0, #10, #20, #30 and so on)
                   will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the
                   founding members of the project.
                 </Trans>
@@ -382,7 +382,7 @@ const Documentation = () => {
               </ul>
               <p>
                 <Trans>
-                Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically
+                Every 11th FOODNOUN for the first 2 years of the project (FOODNOUN ids #1, #11, #22, #33 and so on) will be automatically
                 sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors.
                 </Trans>
               </p>
