@@ -338,7 +338,7 @@ const Documentation = () => {
               </p>
               <p>
                 <Trans>
-                  'Kitchen Nounicllors' are food, technology and human enthusiasts that
+                  'Kitchen Nouncillors' are food, technology and human enthusiasts that
                   advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:
                 </Trans>
               </p>
@@ -389,7 +389,7 @@ const Documentation = () => {
               <p>
                 <Trans>
                   FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS
-                  are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule
+                  are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Multisig, and auctions continue on schedule
                   with the next available FOODNOUN ID.
                 </Trans>
               </p>
