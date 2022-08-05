@@ -29,7 +29,7 @@ const Documentation = () => {
   );
   const foodandbevLink = (
     <Link
-      text={<Trans>Food and Beverage Indsutry Wellness</Trans>}
+      text={<Trans>Food and Beverage Industry Wellness</Trans>}
       url="https://foodnouns.notion.site/foodnouns/Food-Beverage-Industry-Wellness-a93e354112ea4a4e93e7f5395f354d3e"
       leavesPage={true}
     />
