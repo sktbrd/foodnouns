@@ -93,7 +93,7 @@ const Documentation = () => {
           </p>
           <p className={classes.aboutText} style={{ paddingBottom: '4rem' }}>
             <Trans>
-            Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}
+            Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}
              or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}.
             </Trans>
           </p>
