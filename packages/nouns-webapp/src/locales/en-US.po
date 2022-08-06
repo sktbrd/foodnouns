@@ -576,12 +576,12 @@ msgid "FOODNOUNS govern <0>FOODNOUNS DAO</0>. FOODNOUNS can vote on proposals or
 msgstr "FOODNOUNS govern <0>FOODNOUNS DAO</0>. FOODNOUNS can vote on proposals or delegate their vote to a third party. A minimum of <1>{nounsRequired} {0}</1> is required to submit proposals."
 
 #: src/components/Documentation/index.tsx
-#~ msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
-#~ msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
+msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
+msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
 
 #: src/components/Documentation/index.tsx
-msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
-msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+#~ msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+#~ msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
 
 #: src/components/Banner/index.tsx
 msgid "FOREVER."
@@ -694,8 +694,12 @@ msgid "Insufficient bid amount 🤏"
 msgstr "Insufficient bid amount 🤏"
 
 #: src/components/Documentation/index.tsx
-msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
-msgstr "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+msgid "Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+msgstr "Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+#~ msgstr "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
 
 #: src/components/NavLocaleSwitcher/index.tsx
 msgid "Language"
@@ -706,8 +710,12 @@ msgid "Learn more"
 msgstr "Learn more"
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
-msgstr "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+#~ msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+#~ msgstr "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+
+#: src/components/Documentation/index.tsx
+msgid "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+msgstr "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
 
 #: src/components/Documentation/index.tsx
 #~ msgid "Learn more below, or start creating Nouns off-chain using the {playgroundLink}."

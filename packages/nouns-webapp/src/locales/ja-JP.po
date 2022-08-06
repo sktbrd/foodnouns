@@ -541,8 +541,12 @@ msgid "FOODNOUNS govern <0>FOODNOUNS DAO</0>. FOODNOUNS can vote on proposals or
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+#~ msgstr ""
 
 #: src/components/Banner/index.tsx
 msgid "FOREVER."
@@ -655,8 +659,12 @@ msgid "Insufficient bid amount 🤏"
 msgstr "入札額が不足しています🤏"
 
 #: src/components/Documentation/index.tsx
-msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+msgid "Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
 msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+#~ msgstr ""
 
 #: src/components/NavLocaleSwitcher/index.tsx
 msgid "Language"
@@ -667,7 +675,11 @@ msgid "Learn more"
 msgstr "詳細はこちら"
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+#~ msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
