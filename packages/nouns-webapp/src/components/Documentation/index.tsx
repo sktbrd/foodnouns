@@ -153,7 +153,7 @@ const Documentation = () => {
                 </li>
                 <li>
                   <Trans>
-                    Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years).
+                    Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years).
                   </Trans>
                 </li>
               </ul>
