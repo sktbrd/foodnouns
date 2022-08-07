@@ -39,7 +39,7 @@ const Winner: React.FC<WinnerProps> = props => {
       {!isMobile && (
         <Col>
           <a
-            href="https://nouns.center/nouners"
+            href="https://discord.com/channels/@me/1004909358758498324/1005523151679148072"
             target="_blank"
             rel="noreferrer noopener"
             className={classes.verifyLink}
