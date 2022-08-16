@@ -29,7 +29,7 @@ const Documentation = () => {
   );
   const foodandbevLink = (
     <Link
-      text={<Trans>Food and Beverage Indsutry Wellness</Trans>}
+      text={<Trans>Food and Beverage Industry Wellness</Trans>}
       url="https://foodnouns.notion.site/foodnouns/Food-Beverage-Industry-Wellness-a93e354112ea4a4e93e7f5395f354d3e"
       leavesPage={true}
     />
@@ -87,13 +87,12 @@ const Documentation = () => {
             <Trans>
               FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community
               bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day
-              builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},
-               {educationLink}, {foodandbevLink} and {funLink}!
+              builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!
             </Trans>
           </p>
           <p className={classes.aboutText} style={{ paddingBottom: '4rem' }}>
             <Trans>
-            Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}
+            Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}
              or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}.
             </Trans>
           </p>
@@ -153,7 +152,7 @@ const Documentation = () => {
                 </li>
                 <li>
                   <Trans>
-                    Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years).
+                    Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years).
                   </Trans>
                 </li>
               </ul>
@@ -338,7 +337,7 @@ const Documentation = () => {
               </p>
               <p>
                 <Trans>
-                  'Kitchen Nounicllors' are food, technology and human enthusiasts that
+                  'Kitchen Nouncillors' are food, technology and human enthusiasts that
                   advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:
                 </Trans>
               </p>
@@ -389,7 +388,7 @@ const Documentation = () => {
               <p>
                 <Trans>
                   FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS
-                  are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule
+                  are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Multisig, and auctions continue on schedule
                   with the next available FOODNOUN ID.
                 </Trans>
               </p>

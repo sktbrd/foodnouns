@@ -18,8 +18,12 @@ msgid "'FOODNOUNDERS' are professional chefs turned degens who initiated FOODNOU
 msgstr "'FOODNOUNDERS' are professional chefs turned degens who initiated FOODNOUNS. Here are the FOODNOUNDERS:"
 
 #: src/components/Documentation/index.tsx
-msgid "'Kitchen Nounicllors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
-msgstr "'Kitchen Nounicllors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
+msgid "'Kitchen Nouncillors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
+msgstr "'Kitchen Nouncillors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "'Kitchen Nounicllors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
+#~ msgstr "'Kitchen Nounicllors' are food, technology and human enthusiasts that advice and assist FOODNOUNS DAO. Here the Kitchen Noucillors:"
 
 #: src/components/ByLineHoverCard/index.tsx
 msgid "... and {0} more"
@@ -420,8 +424,12 @@ msgid "Every 10th FOODNOUN for the first 5 years of the project will be sent to 
 msgstr "Every 10th FOODNOUN for the first 5 years of the project will be sent to our multisig where it will be vested and distributed to individual FOODNOUNDERS."
 
 #: src/components/Documentation/index.tsx
-msgid "Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
-msgstr "Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
+msgid "Every 10th FOODNOUN for the first year of the project (FOODNOUN ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
+msgstr "Every 10th FOODNOUN for the first year of the project (FOODNOUN ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
+#~ msgstr "Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among the founding members of the project."
 
 #: src/components/Documentation/index.tsx
 #~ msgid "Every 10th FOODNOUN for the first year of the project (Noun ids #0, #10, #20, #30 and so on) will be automatically sent to the FOODNOUNER's multisig to be vested and shared among thefounding members of the project."
@@ -432,8 +440,12 @@ msgid "Every 10th FOODNOUN will be sent to the FOODNOUNDER multi-sig for the fir
 msgstr "Every 10th FOODNOUN will be sent to the FOODNOUNDER multi-sig for the first year and every 11th FOODNOUN will be sent to the Kitchen Nouncil multi-sig for the first 2 years where they will be vested and distributed to individual founding members."
 
 #: src/components/Documentation/index.tsx
-msgid "Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
-msgstr "Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
+msgid "Every 11th FOODNOUN for the first 2 years of the project (FOODNOUN ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
+msgstr "Every 11th FOODNOUN for the first 2 years of the project (FOODNOUN ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
+#~ msgstr "Every 11th FOODNOUN for the first 2 years of the project (Noun ids #1, #11, #22, #33 and so on) will be automatically sent to the Kitchen Nouncil wallet to be vested and shared among the Kitchen Nouncillors."
 
 #: src/pages/Vote/index.tsx
 msgid "Execute"
@@ -478,8 +490,12 @@ msgid "FOODNOUN {0}"
 msgstr "FOODNOUN {0}"
 
 #: src/components/Documentation/index.tsx
-msgid "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule with the next available FOODNOUN ID."
-msgstr "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule with the next available FOODNOUN ID."
+#~ msgid "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule with the next available FOODNOUN ID."
+#~ msgstr "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Mulisig, and auctions continue on schedule with the next available FOODNOUN ID."
+
+#: src/components/Documentation/index.tsx
+msgid "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Multisig, and auctions continue on schedule with the next available FOODNOUN ID."
+msgstr "FOODNOUNDER and Kitchen Nouncil distributions don't interfere with the cadence of 24 hour auctions. FOODNOUNS are sent directly to the Nounder's Multisig and the Kitchen Nouncil's Multisig, and auctions continue on schedule with the next available FOODNOUN ID."
 
 #: src/components/Documentation/index.tsx
 msgid "FOODNOUNDER and Kitchen Nouncillor's Rewards"
@@ -560,12 +576,12 @@ msgid "FOODNOUNS govern <0>FOODNOUNS DAO</0>. FOODNOUNS can vote on proposals or
 msgstr "FOODNOUNS govern <0>FOODNOUNS DAO</0>. FOODNOUNS can vote on proposals or delegate their vote to a third party. A minimum of <1>{nounsRequired} {0}</1> is required to submit proposals."
 
 #: src/components/Documentation/index.tsx
-#~ msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
-#~ msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
+msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
+msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink}, {educationLink}, {foodandbevLink} and {funLink}!"
 
 #: src/components/Documentation/index.tsx
-msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
-msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+#~ msgid "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
+#~ msgstr "FOODNOUNS is a tasty fork of the {nounsdaoLink}, an experimental on-chain avatar community bootstrapping digital community and identity. Proceeds from 3 FOODNOUNS auctions per day builds the Treasury that will fund on-chain Proposals with a focus on {foodproductionLink},{educationLink}, {foodandbevLink} and {funLink}!"
 
 #: src/components/Banner/index.tsx
 msgid "FOREVER."
@@ -589,8 +605,12 @@ msgid "Food Production and Innovation"
 msgstr "Food Production and Innovation"
 
 #: src/components/Documentation/index.tsx
-msgid "Food and Beverage Indsutry Wellness"
-msgstr "Food and Beverage Indsutry Wellness"
+#~ msgid "Food and Beverage Indsutry Wellness"
+#~ msgstr "Food and Beverage Indsutry Wellness"
+
+#: src/components/Documentation/index.tsx
+msgid "Food and Beverage Industry Wellness"
+msgstr "Food and Beverage Industry Wellness"
 
 #: src/components/NavBar/index.tsx
 msgid "Foodnouns DAO"
@@ -674,8 +694,12 @@ msgid "Insufficient bid amount 🤏"
 msgstr "Insufficient bid amount 🤏"
 
 #: src/components/Documentation/index.tsx
-msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
-msgstr "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+msgid "Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+msgstr "Kitchen Nouncillors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
+#~ msgstr "Kitchen Nounicllors receive rewards in the form of FOODNOUNS (10% of supply for first 2 years)."
 
 #: src/components/NavLocaleSwitcher/index.tsx
 msgid "Language"
@@ -686,8 +710,12 @@ msgid "Learn more"
 msgstr "Learn more"
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
-msgstr "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+#~ msgid "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+#~ msgstr "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+
+#: src/components/Documentation/index.tsx
+msgid "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+msgstr "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
 
 #: src/components/Documentation/index.tsx
 #~ msgid "Learn more below, or start creating Nouns off-chain using the {playgroundLink}."
