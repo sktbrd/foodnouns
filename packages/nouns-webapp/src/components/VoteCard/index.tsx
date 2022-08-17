@@ -13,6 +13,9 @@ import clsx from 'clsx';
 import { ensCacheKey } from '../../utils/ensLookup';
 import { useActiveLocale } from '../../hooks/useActivateLocale';
 
+const NNS_REGISTRY = '0x3e1970dc478991b49c4327973ea8a4862ef5a4de';
+const ENS_REGISTRY = '0x00000000000c2e074ec69a0dfb2997ba6c7d2e1e';
+
 export enum VoteCardVariant {
   FOR,
   AGAINST,
@@ -68,7 +71,7 @@ const VoteCard: React.FC<VoteCardProps> = props => {
   // Pre-fetch ENS  of delegates (with 30min TTL)
   // This makes hover cards load more smoothly
   useEffect(() => {
-    if (!delegateGroupedVoteData || !library || ensCached) {
+    if (!delegateGroupedVoteData || !library || ensCached || !library.network) {
       return;
     }
 
@@ -77,18 +80,41 @@ const VoteCard: React.FC<VoteCardProps> = props => {
         return;
       }
 
+      library.network.ensAddress = NNS_REGISTRY;
+
       library
         .lookupAddress(delegateInfo.delegate)
         .then(name => {
           // Store data as mapping of address_Expiration => address or ENS
-          if (name) {
-            localStorage.setItem(
-              ensCacheKey(delegateInfo.delegate),
-              JSON.stringify({
-                name,
-                expires: Date.now() / 1000 + 30 * 60,
-              }),
-            );
+          if (!name) {
+            library.network.ensAddress = ENS_REGISTRY;
+            library
+              .lookupAddress(delegateInfo.delegate)
+              .then(name2 => {
+                if (!name2) return;
+                if (name2) {
+                  localStorage.setItem(
+                    ensCacheKey(delegateInfo.delegate),
+                    JSON.stringify({
+                      name2,
+                      expires: Date.now() / 1000 + 30 * 60,
+                    }),
+                  );
+                }
+              })
+              .catch(error => {
+                console.log(`error resolving reverse ens lookup: `, error);
+              });
+          } else {
+            if (name) {
+              localStorage.setItem(
+                ensCacheKey(delegateInfo.delegate),
+                JSON.stringify({
+                  name,
+                  expires: Date.now() / 1000 + 30 * 60,
+                }),
+              );
+            }
           }
         })
         .catch(error => {
