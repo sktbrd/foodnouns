@@ -13,4 +13,5 @@
   letter-spacing: 0.2px;
   font-family: 'PT Root UI';
   font-weight: bold;
+  white-space: nowrap;
 }
