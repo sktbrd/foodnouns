@@ -1,6 +1,7 @@
 import Banner from '../../components/Banner';
 import Auction from '../../components/Auction';
 import Documentation from '../../components/Documentation';
+import Leaderboard from '../../components/Leaderboard';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayAuction';
 import { push } from 'connected-react-router';
@@ -49,8 +50,12 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
       {onDisplayAuctionNounId !== undefined && onDisplayAuctionNounId !== lastAuctionNounId ? (
         <ProfileActivityFeed nounId={onDisplayAuctionNounId} />
       ) : (
-        <Banner />
+        <>
+          <Leaderboard tops={10} />
+          <Banner />
+        </>
       )}
+
       <Documentation />
     </>
   );
