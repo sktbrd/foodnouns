@@ -13,6 +13,7 @@ interface LeaderboardPageProps {
 
 const Leaderboard: React.FC<LeaderboardPageProps> = props => {
   const { tops } = props;
+  const isMobile = window.innerWidth < 992;
   const { loading, error, data } = useQuery(leaderboard(tops || 10));
 
   if (loading) {
@@ -40,24 +41,26 @@ const Leaderboard: React.FC<LeaderboardPageProps> = props => {
           <tr>
             <th>#</th>
             <th>Rank</th>
-            <th>Votes</th>
-            <th>Vote Weight</th>
-            <th>Proposals Voted</th>
+            <th style={{ textAlign: 'center' }}>Votes</th>
+            <th style={{ textAlign: 'center' }}>Vote Weight</th>
+            <th style={{ textAlign: 'center' }}>Proposals Voted</th>
           </tr>
 
           {data.delegates.map((item: any, index: number) => (
             <tr>
               <td>{index + 1}</td>
               <td>
-                <Link
-                  text={<ShortAddress address={item.id} />}
-                  url={buildEtherscanAddressLink(item.id)}
-                  leavesPage={true}
+                <ShortAddress
+                  address={item.id}
+                  avatar={true}
+                  link={buildEtherscanAddressLink(item.id)}
                 />
               </td>
-              <td>{item.delegatedVotes}</td>
-              <td>{((item.delegatedVotes / data.auctions[0]?.noun?.id) * 100).toFixed(2)} %</td>
-              <td>{item.votes.length}</td>
+              <td style={{ textAlign: 'center' }}>{item.delegatedVotes}</td>
+              <td style={{ textAlign: 'center' }}>
+                {((item.delegatedVotes / data.auctions[0]?.noun?.id) * 100).toFixed(2)} %
+              </td>
+              <td style={{ textAlign: 'center' }}>{item.votes.length}</td>
             </tr>
           ))}
         </Table>
