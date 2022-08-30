@@ -52,7 +52,7 @@ const Leaderboard: React.FC<LeaderboardPageProps> = props => {
               <td>
                 <ShortAddress
                   address={item.id}
-                  avatar={true}
+                  avatar={isMobile ? false : true}
                   link={buildEtherscanAddressLink(item.id)}
                 />
               </td>
