@@ -298,6 +298,15 @@ export const leaderboard = (tops: number) => gql`
   }
 `;
 
+export const mintedHeads = () => gql`
+  {
+    seeds {
+      id
+      head
+    }
+  }
+`;
+
 export const clientFactory = (uri: string) =>
   new ApolloClient({
     uri,
