@@ -1,0 +1,32 @@
+.wrapper h1 {
+  font-family: 'Londrina Solid';
+}
+
+.wrapper h2 {
+  font-family: 'Londrina Solid';
+}
+
+@media (max-width: 992px) {
+  .wrapper {
+    padding: 2rem;
+  }
+
+  .wrapper h1 {
+    font-size: 3rem;
+  }
+
+  .wrapper h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper h1 {
+    font-size: 4rem;
+    margin-left: 2rem;
+  }
+
+  .wrapper h2 {
+    font-size: 2.5rem;
+  }
+}

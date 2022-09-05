@@ -277,6 +277,15 @@ export const currentlyDelegatedNouns = (delegate: string) => gql`
 }
 `;
 
+export const totalBid = () => gql`
+  {
+    governances {
+      id
+      totalBid
+    }
+  }
+`;
+
 export const leaderboard = (tops: number) => gql`
   {
     delegates(first: ${tops}, orderBy: delegatedVotes, orderDirection: desc, where: { delegatedVotes_gt:0 }) {
