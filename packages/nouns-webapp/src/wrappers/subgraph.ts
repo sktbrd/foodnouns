@@ -277,6 +277,36 @@ export const currentlyDelegatedNouns = (delegate: string) => gql`
 }
 `;
 
+export const leaderboard = (tops: number) => gql`
+  {
+    delegates(first: ${tops}, orderBy: delegatedVotes, orderDirection: desc, where: { delegatedVotes_gt:0 }) {
+      id
+      delegatedVotes
+      votes {
+        id
+      }
+    }
+    auctions(orderBy: startTime, orderDirection: desc, first: 1) {
+      id
+      amount
+      startTime
+      endTime
+      noun {
+        id
+      }
+    }
+  }
+`;
+
+export const mintedHeads = () => gql`
+  {
+    seeds {
+      id
+      head
+    }
+  }
+`;
+
 export const clientFactory = (uri: string) =>
   new ApolloClient({
     uri,

@@ -73,7 +73,7 @@ const NavBar = () => {
                   rel="noreferrer"
                 >
                   <NavBarTreasury
-                    treasuryBalance={Number(utils.formatEther(treasuryBalance)).toFixed(0)}
+                    treasuryBalance={Number(utils.formatEther(treasuryBalance)).toFixed(3)}
                     treasuryStyle={nonWalletButtonStyle}
                   />
                 </Nav.Link>
@@ -88,7 +88,7 @@ const NavBar = () => {
           <Navbar.Collapse className="justify-content-end">
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
-                buttonText={<Trans>Foodnouns DAO</Trans>}
+                buttonText={<Trans>FOODNOUNS DAO</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faUsers} />}
                 buttonStyle={nonWalletButtonStyle}
               />

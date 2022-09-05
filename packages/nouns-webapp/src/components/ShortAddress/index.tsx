@@ -6,8 +6,13 @@ import { useShortAddress } from '../../utils/addressAndENSDisplayUtils';
 import React from 'react';
 import Identicon from '../Identicon';
 
-const ShortAddress: React.FC<{ address: string; avatar?: boolean; size?: number }> = props => {
-  const { address, avatar, size = 24 } = props;
+const ShortAddress: React.FC<{
+  address: string;
+  avatar?: boolean;
+  size?: number;
+  link?: string;
+}> = props => {
+  const { address, avatar, size = 24, link } = props;
   const { library: provider } = useEthers();
 
   const ens = useReverseENSLookUp(address);
@@ -19,10 +24,32 @@ const ShortAddress: React.FC<{ address: string; avatar?: boolean; size?: number 
       <div className={classes.shortAddress}>
         {avatar && (
           <div key={address}>
-            <Identicon size={size} address={address} provider={provider} />
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <Identicon size={size} address={address} provider={provider} />
+            </a>
           </div>
         )}
-        <span>{ens && !ensMatchesBlocklistRegex ? ens : shortAddress}</span>
+        <span style={{ color: 'black' }}>
+          {link ? (
+            <a
+              href={link}
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              {ens && !ensMatchesBlocklistRegex ? ens : shortAddress}{' '}
+            </a>
+          ) : ens && !ensMatchesBlocklistRegex ? (
+            ens
+          ) : (
+            shortAddress
+          )}
+        </span>
       </div>
     );
   }

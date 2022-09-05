@@ -682,12 +682,12 @@ msgstr "Held by"
 #~ msgstr "Help mint the next FOODNOUN"
 
 #: src/components/Documentation/index.tsx
-msgid "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal  has been passed, and is intended as a last resort."
-msgstr "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal  has been passed, and is intended as a last resort."
+#~ msgid "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal  has been passed, and is intended as a last resort."
+#~ msgstr "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal  has been passed, and is intended as a last resort."
 
 #: src/components/Documentation/index.tsx
-#~ msgid "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
-#~ msgstr "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
+msgid "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
+msgstr "In addition to the precautions taken by Compound Governance, FOODNOUNDERS have given themselves a special veto right to ensure that no malicious proposals can be passed while the FOODNOUN supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
 
 #: src/components/Bid/index.tsx
 msgid "Insufficient bid amount 🤏"
@@ -714,8 +714,8 @@ msgstr "Learn more"
 #~ msgstr "Learn more about proposals and the and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
-msgstr "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink}or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+msgid "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink} or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
+msgstr "Learn more about proposals and the {foodnounsdaoLink}, take part in longer form discussions in {chefnotebookLink} or start creating your own “off-chain” FOODNOUN using the {testkitchenLink}."
 
 #: src/components/Documentation/index.tsx
 #~ msgid "Learn more below, or start creating Nouns off-chain using the {playgroundLink}."
