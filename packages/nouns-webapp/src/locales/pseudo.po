@@ -511,6 +511,7 @@ msgstr ""
 
 #: src/components/Documentation/index.tsx
 #: src/components/Documentation/index.tsx
+#: src/components/NavBar/index.tsx
 #: src/pages/Governance/index.tsx
 msgid "FOODNOUNS DAO"
 msgstr ""
@@ -572,9 +573,21 @@ msgstr ""
 msgid "Food and Beverage Industry Wellness"
 msgstr ""
 
-#: src/components/NavBar/index.tsx
-msgid "Foodnouns DAO"
+#: src/pages/Governance/index.tsx
+msgid "Foodnoun"
 msgstr ""
+
+#: src/pages/Governance/index.tsx
+msgid "Foodnouns"
+msgstr ""
+
+#: src/components/NavBar/index.tsx
+#~ msgid "Foodnouns DAO"
+#~ msgstr ""
+
+#: src/pages/Governance/index.tsx
+#~ msgid "Foodoun"
+#~ msgstr ""
 
 #: src/components/VoteCard/index.tsx
 msgid "For"
@@ -720,8 +733,8 @@ msgid "None"
 msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "Noun"
-msgstr ""
+#~ msgid "Noun"
+#~ msgstr ""
 
 #: src/components/Documentation/index.tsx
 #~ msgid "Noun Seeder Contract"
@@ -760,8 +773,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "Nouns"
-msgstr ""
+#~ msgid "Nouns"
+#~ msgstr ""
 
 #: src/components/NounInfoRowHolder/index.tsx
 msgid "Nouns Auction House"

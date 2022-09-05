@@ -539,6 +539,7 @@ msgstr "FOODNOUNDERS will probably revoke this veto right when they deem it safe
 
 #: src/components/Documentation/index.tsx
 #: src/components/Documentation/index.tsx
+#: src/components/NavBar/index.tsx
 #: src/pages/Governance/index.tsx
 msgid "FOODNOUNS DAO"
 msgstr "FOODNOUNS DAO"
@@ -612,9 +613,21 @@ msgstr "Food Production and Innovation"
 msgid "Food and Beverage Industry Wellness"
 msgstr "Food and Beverage Industry Wellness"
 
+#: src/pages/Governance/index.tsx
+msgid "Foodnoun"
+msgstr "Foodnoun"
+
+#: src/pages/Governance/index.tsx
+msgid "Foodnouns"
+msgstr "Foodnouns"
+
 #: src/components/NavBar/index.tsx
-msgid "Foodnouns DAO"
-msgstr "Foodnouns DAO"
+#~ msgid "Foodnouns DAO"
+#~ msgstr "Foodnouns DAO"
+
+#: src/pages/Governance/index.tsx
+#~ msgid "Foodoun"
+#~ msgstr "Foodoun"
 
 #: src/components/VoteCard/index.tsx
 msgid "For"
@@ -752,8 +765,8 @@ msgid "None"
 msgstr "None"
 
 #: src/pages/Governance/index.tsx
-msgid "Noun"
-msgstr "Noun"
+#~ msgid "Noun"
+#~ msgstr "Noun"
 
 #: src/components/CurrentDelegatePannel/index.tsx
 msgid "Noun votes are not transferable, but are <0>delegatable</0>, which means you can assign your vote to someone else as long as you own your Noun."
@@ -764,8 +777,8 @@ msgstr "Noun votes are not transferable, but are <0>delegatable</0>, which means
 #~ msgstr "Noun {0}"
 
 #: src/pages/Governance/index.tsx
-msgid "Nouns"
-msgstr "Nouns"
+#~ msgid "Nouns"
+#~ msgstr "Nouns"
 
 #: src/components/NounInfoRowHolder/index.tsx
 msgid "Nouns Auction House"
