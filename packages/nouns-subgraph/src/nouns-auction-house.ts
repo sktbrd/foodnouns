@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { BigInt, log } from '@graphprotocol/graph-ts';
 import {
   AuctionBid,
@@ -5,6 +6,7 @@ import {
   AuctionExtended,
   AuctionSettled,
 } from './types/NounsAuctionHouse/NounsAuctionHouse';
+import { getGovernanceEntity } from './utils/helpers';
 import { Auction, Noun, Bid } from './types/schema';
 import { getOrCreateAccount } from './utils/helpers';
 
@@ -90,4 +92,10 @@ export function handleAuctionSettled(event: AuctionSettled): void {
 
   auction.settled = true;
   auction.save();
+
+  // eslint-disable-next-line prefer-const
+  let governance = getGovernanceEntity();
+
+  governance.totalBid = governance.totalBid.plus(event.params.amount);
+  governance.save();
 }

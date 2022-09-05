@@ -1,3 +1,4 @@
+/* eslint-disable prefer-const */
 import { Bytes, log } from '@graphprotocol/graph-ts';
 import {
   ProposalCreatedWithRequirements,

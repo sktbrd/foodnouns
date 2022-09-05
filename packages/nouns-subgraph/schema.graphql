@@ -259,4 +259,7 @@ type Governance @entity {
 
   "Number of proposals currently queued for execution"
   proposalsQueued: BigInt!
+
+  "Total bid"
+  totalBid: BigInt!
 }

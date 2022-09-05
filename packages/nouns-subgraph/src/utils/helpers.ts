@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Account, Delegate, Proposal, Governance, Vote } from '../types/schema';
 import { ZERO_ADDRESS, BIGINT_ZERO, BIGINT_ONE } from './constants';
 
@@ -106,6 +108,7 @@ export function getGovernanceEntity(): Governance {
     governance.delegatedVotesRaw = BIGINT_ZERO;
     governance.delegatedVotes = BIGINT_ZERO;
     governance.proposalsQueued = BIGINT_ZERO;
+    governance.totalBid = BIGINT_ZERO;
   }
 
   return governance as Governance;
