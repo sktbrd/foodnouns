@@ -18,8 +18,8 @@ const GovernancePage = () => {
   const treasuryBalanceUSD = useTreasuryUSDValue();
 
   // Note: We have to extract this copy out of the <span> otherwise the Lingui macro gets confused
-  const nounSingular = <Trans>Foodnoun</Trans>;
-  const nounPlural = <Trans>Foodnouns</Trans>;
+  const nounSingular = <Trans>FOODNOUN</Trans>;
+  const nounPlural = <Trans>FOODNOUNS</Trans>;
 
   return (
     <Section fullWidth={false} className={classes.section}>
