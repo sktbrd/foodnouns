@@ -473,6 +473,10 @@ msgstr "Explore"
 #~ msgid "FOODNONDER distributions don't interfere with the cadence of 8 hour auctions. Nouns are sent directly to the FOODNOUNDER's Multisig, and auctions continue on schedule with the next available FOODNOUN ID."
 #~ msgstr "FOODNOUNDER distributions don't interfere with the cadence of 8 hour auctions. Nouns are sent directly to the FOODNOUNDER's Multisig, and auctions continue on schedule with the next available FOODNOUN ID."
 
+#: src/pages/Governance/index.tsx
+msgid "FOODNOUN"
+msgstr "FOODNOUN"
+
 #: src/components/Documentation/index.tsx
 msgid "FOODNOUN Seeder Contract"
 msgstr "FOODNOUN Seeder Contract"
@@ -530,8 +534,8 @@ msgstr "FOODNOUNDERS will probably revoke this veto right when they deem it safe
 #~ msgstr "FOODNOUNDER's Reward"
 
 #: src/pages/Governance/index.tsx
-#~ msgid "FOODNOUNS"
-#~ msgstr "FOODNOUNS"
+msgid "FOODNOUNS"
+msgstr "FOODNOUNS"
 
 #: src/components/NounInfoRowHolder/index.tsx
 #~ msgid "FOODNOUNS Auction House"
@@ -614,12 +618,12 @@ msgid "Food and Beverage Industry Wellness"
 msgstr "Food and Beverage Industry Wellness"
 
 #: src/pages/Governance/index.tsx
-msgid "Foodnoun"
-msgstr "Foodnoun"
+#~ msgid "Foodnoun"
+#~ msgstr "Foodnoun"
 
 #: src/pages/Governance/index.tsx
-msgid "Foodnouns"
-msgstr "Foodnouns"
+#~ msgid "Foodnouns"
+#~ msgstr "Foodnouns"
 
 #: src/components/NavBar/index.tsx
 #~ msgid "Foodnouns DAO"

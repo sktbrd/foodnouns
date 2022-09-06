@@ -473,6 +473,10 @@ msgstr ""
 msgid "Explore"
 msgstr ""
 
+#: src/pages/Governance/index.tsx
+msgid "FOODNOUN"
+msgstr ""
+
 #: src/components/Documentation/index.tsx
 msgid "FOODNOUN Seeder Contract"
 msgstr ""
@@ -507,6 +511,10 @@ msgstr ""
 
 #: src/components/Documentation/index.tsx
 msgid "FOODNOUNDERS will probably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy FOODNOUN distribution and a community that is engaged in the governance process."
+msgstr ""
+
+#: src/pages/Governance/index.tsx
+msgid "FOODNOUNS"
 msgstr ""
 
 #: src/components/Documentation/index.tsx
@@ -574,12 +582,12 @@ msgid "Food and Beverage Industry Wellness"
 msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "Foodnoun"
-msgstr ""
+#~ msgid "Foodnoun"
+#~ msgstr ""
 
 #: src/pages/Governance/index.tsx
-msgid "Foodnouns"
-msgstr ""
+#~ msgid "Foodnouns"
+#~ msgstr ""
 
 #: src/components/NavBar/index.tsx
 #~ msgid "Foodnouns DAO"
