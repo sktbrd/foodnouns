@@ -16,7 +16,7 @@
   }
 
   .wrapper h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -27,6 +27,38 @@
   }
 
   .wrapper h2 {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
   }
+}
+
+.box {
+  position: relative;
+  text-align: center;
+  background-color: #cccccc;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: #cccccc;
+  z-index: -1;
+}
+.box::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  left: -2px;
+  right: -2px;
+  background: #cccccc;
+  z-index: -1;
+  filter: blur(30px);
+}
+
+.glow {
+  text-shadow: 0 0 10px #797979;
 }

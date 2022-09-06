@@ -3,6 +3,8 @@ import useLidoBalance from './useLidoBalance';
 import { useCoingeckoPrice } from '@usedapp/coingecko';
 import config from '../config';
 import { ethers } from 'ethers';
+import { useQuery } from '@apollo/client';
+import { totalBid } from '../wrappers/subgraph';
 
 /**
  * Computes treasury balance (ETH + Lido)
@@ -26,4 +28,18 @@ export const useTreasuryUSDValue = () => {
     ethers.utils.formatEther(useTreasuryBalance()?.toString() || '0'),
   );
   return etherPrice * treasuryBalanceETH;
+};
+
+export const useContributionsBalance = () => {
+  const { data } = useQuery(totalBid());
+  const ethBalance = Number(
+    ethers.utils.formatEther(data?.governances[0]?.totalBid?.toString() || 0),
+  );
+  return ethBalance * 0.25;
+};
+
+export const useContributionsUSDValue = () => {
+  const etherPrice = Number(useCoingeckoPrice('ethereum', 'usd'));
+  const contributionsBalanceETH = useContributionsBalance();
+  return etherPrice * contributionsBalanceETH;
 };
