@@ -16,7 +16,7 @@ const Contribution = () => {
           treasury contract....forever. We are honored to be a premier subDAO and member of the
           larger nounish ecosystem.
         </h2>
-        <h1 className={classes.glow} style={{ font: 'PT ROOT UI', fontFamily: 'PT ROOT UI' }}>
+        <h1 style={{ font: 'PT ROOT UI', fontFamily: 'PT ROOT UI' }}>
           <b>
             Ξ {contributionsBalance && i18n.number(contributionsBalance)} |{' '}
             {contributionsUSDValue &&
