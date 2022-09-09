@@ -36,25 +36,3 @@
   text-align: center;
   background-color: #cccccc;
 }
-
-.box::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  background: #cccccc;
-  z-index: -1;
-}
-.box::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  bottom: -2px;
-  left: -2px;
-  right: -2px;
-  background: #cccccc;
-  z-index: -1;
-  filter: blur(30px);
-}
