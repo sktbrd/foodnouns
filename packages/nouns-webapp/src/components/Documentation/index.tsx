@@ -367,23 +367,10 @@ const Documentation = () => {
                 </li>
                 <li>
                   <Link
-                    text="@brennen_eth"
-                    url="https://twitter.com/brennen_eth"
-                    leavesPage={true}
-                  />
-                </li>
-                <li>
-                  <Link
                     text="@frankpepper12"
                     url="https://twitter.com/FrankPepper12"
                     leavesPage={true}
                   />
-                </li>
-                <li>
-                  <Link text="@flavorbank" url="https://twitter.com/Flavorbank" leavesPage={true} />
-                </li>
-                <li>
-                  <Link text="Kevin" url="https://twitter.com/foodnouns" leavesPage={true} />
                 </li>
                 <li>
                   <Link text="@mamaxargs" url="https://twitter.com/mamaxargs" leavesPage={true} />
