@@ -86,6 +86,30 @@ const NavBar = () => {
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
           <Navbar.Collapse className="justify-content-end">
+            <Nav.Link
+              href={externalURL(ExternalURL.discord)}
+              className={classes.nounsNavLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeNav}
+            >
+              <NavBarButton
+                buttonText={<Trans>Discord</Trans>}
+                buttonStyle={nonWalletButtonStyle}
+              />
+            </Nav.Link>
+            <Nav.Link
+              href={externalURL(ExternalURL.twitter)}
+              className={classes.nounsNavLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeNav}
+            >
+              <NavBarButton
+                buttonText={<Trans>Twitter</Trans>}
+                buttonStyle={nonWalletButtonStyle}
+              />
+            </Nav.Link>
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
                 buttonText={<Trans>FOODNOUNS DAO</Trans>}
