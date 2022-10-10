@@ -17,6 +17,8 @@ export function getOrCreateAccount(
     tokenHolder.totalTokensHeldRaw = BIGINT_ZERO;
     tokenHolder.totalTokensHeld = BIGINT_ZERO;
     tokenHolder.nouns = [];
+    tokenHolder.settlementCount = BIGINT_ZERO;
+    tokenHolder.totalSettlementFee = BIGINT_ZERO;
 
     if (save) {
       tokenHolder.save();
@@ -42,7 +44,7 @@ export function getOrCreateDelegate(
 
     if (id != ZERO_ADDRESS) {
       let governance = getGovernanceEntity();
-      governance.totalDelegates = governance.totalDelegates + BIGINT_ONE;
+      governance.totalDelegates = governance.totalDelegates.plus(BIGINT_ONE);
       governance.save();
     }
 
@@ -84,7 +86,7 @@ export function getOrCreateProposal(
 
     let governance = getGovernanceEntity();
 
-    governance.proposals = governance.proposals + BIGINT_ONE;
+    governance.proposals = governance.proposals.plus(BIGINT_ONE);
     governance.save();
 
     if (save) {
@@ -109,6 +111,7 @@ export function getGovernanceEntity(): Governance {
     governance.delegatedVotes = BIGINT_ZERO;
     governance.proposalsQueued = BIGINT_ZERO;
     governance.totalBid = BIGINT_ZERO;
+    governance.totalSettlementFee = BIGINT_ZERO;
   }
 
   return governance as Governance;

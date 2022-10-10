@@ -28,6 +28,7 @@ export function handleAuctionCreated(event: AuctionCreated): void {
   auction.startTime = event.params.startTime;
   auction.endTime = event.params.endTime;
   auction.settled = false;
+  auction.settlementFee = BigInt.fromI32(0);
   auction.save();
 }
 
@@ -90,12 +91,27 @@ export function handleAuctionSettled(event: AuctionSettled): void {
     return;
   }
 
+  // settler
+  let settlerAddress = event.transaction.from.toHex();
+  let settler = getOrCreateAccount(settlerAddress);
+
+  auction.settler = settler.id;
+  auction.settlementFee = event.transaction.gasUsed.times(event.transaction.gasPrice);
   auction.settled = true;
   auction.save();
+
+  settler.totalSettlementFee = settler.totalSettlementFee.plus(
+    event.transaction.gasUsed.times(event.transaction.gasPrice),
+  );
+  settler.settlementCount = settler.settlementCount.plus(BigInt.fromI32(1));
+  settler.save();
 
   // eslint-disable-next-line prefer-const
   let governance = getGovernanceEntity();
 
+  governance.totalSettlementFee = governance.totalSettlementFee.plus(
+    event.transaction.gasUsed.times(event.transaction.gasPrice),
+  );
   governance.totalBid = governance.totalBid.plus(event.params.amount);
   governance.save();
 }
