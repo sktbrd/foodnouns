@@ -37,7 +37,7 @@ const Settlements: React.FC<SettlementsPageProps> = props => {
   return (
     <Section fullWidth={false} className={classes.wrapper}>
       <div style={{ textAlign: 'center' }}>
-        <h1>FOODNOUNS DAO LEADERBOARD</h1>
+        <h1>FOODNOUNS DAO</h1>
         <h2>Settlement Tracker</h2>
       </div>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
