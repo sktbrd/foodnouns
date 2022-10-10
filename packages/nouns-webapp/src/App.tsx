@@ -19,6 +19,7 @@ import NoundersPage from './pages/Nounders';
 import NotFoundPage from './pages/NotFound';
 import Playground from './pages/Playground';
 import Leaderboard from './pages/Leaderboard';
+import Settlements from './pages/Settlements';
 import Unminted from './pages/Unminted';
 import { CHAIN_ID } from './config';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -67,6 +68,7 @@ function App() {
             <Route exact path="/vote/:id" component={VotePage} />
             <Route exact path="/playground" component={Playground} />
             <Route exact path="/leaderboard" component={Leaderboard} />
+            <Route exact path="/settlements" component={Settlements} />
             <Route exact path="/unminted" component={Unminted} />
             <Route component={NotFoundPage} />
           </Switch>

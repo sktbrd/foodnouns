@@ -2,6 +2,7 @@ import Banner from '../../components/Banner';
 import Auction from '../../components/Auction';
 import Documentation from '../../components/Documentation';
 import Leaderboard from '../../components/Leaderboard';
+import Settlements from '../../components/Settlements';
 import Contribution from '../../components/Contribution';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayAuction';
@@ -57,6 +58,7 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
       ) : (
         <>
           <Leaderboard tops={10} />
+          <Settlements tops={10} />
           <Contribution />
           <Banner />
         </>
