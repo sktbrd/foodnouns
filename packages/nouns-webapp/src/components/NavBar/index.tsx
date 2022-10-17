@@ -80,36 +80,15 @@ const NavBar = () => {
               )}
             </Nav.Item>
           </div>
+          <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
+
           <Navbar.Toggle
             className={classes.navBarToggle}
             aria-controls="basic-navbar-nav"
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
           <Navbar.Collapse className="justify-content-end">
-            <Nav.Link
-              href={externalURL(ExternalURL.discord)}
-              className={classes.nounsNavLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeNav}
-            >
-              <NavBarButton
-                buttonText={<Trans>Discord</Trans>}
-                buttonStyle={nonWalletButtonStyle}
-              />
-            </Nav.Link>
-            <Nav.Link
-              href={externalURL(ExternalURL.twitter)}
-              className={classes.nounsNavLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeNav}
-            >
-              <NavBarButton
-                buttonText={<Trans>Twitter</Trans>}
-                buttonStyle={nonWalletButtonStyle}
-              />
-            </Nav.Link>
+            
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
                 buttonText={<Trans>FOODNOUNS DAO</Trans>}
@@ -142,7 +121,32 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
-            <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
+          </Navbar.Collapse>
+          <Navbar.Collapse className="justify-content-end">
+            <Nav.Link
+              href={externalURL(ExternalURL.discord)}
+              className={classes.nounsNavLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeNav}
+            >
+              <NavBarButton
+                buttonText={<Trans>Discord</Trans>}
+                buttonStyle={nonWalletButtonStyle}
+              />
+            </Nav.Link>
+            <Nav.Link
+              href={externalURL(ExternalURL.twitter)}
+              className={classes.nounsNavLink}
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeNav}
+            >
+              <NavBarButton
+                buttonText={<Trans>Twitter</Trans>}
+                buttonStyle={nonWalletButtonStyle}
+              />
+            </Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
