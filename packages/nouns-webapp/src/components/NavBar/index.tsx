@@ -5,6 +5,8 @@ import { useEtherBalance } from '@usedapp/core';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, Container } from 'react-bootstrap';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 import testnetNoun from '../../assets/testnet-noun.png';
 import config, { CHAIN_ID } from '../../config';
 import { utils } from 'ethers';
@@ -16,6 +18,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 import NavBarTreasury from '../NavBarTreasury';
 import NavWallet from '../NavWallet';
 import { Trans } from '@lingui/macro';
@@ -80,7 +83,6 @@ const NavBar = () => {
               )}
             </Nav.Item>
           </div>
-          <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
 
           <Navbar.Toggle
             className={classes.navBarToggle}
@@ -88,7 +90,8 @@ const NavBar = () => {
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
           <Navbar.Collapse className="justify-content-end">
-            
+            <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
+
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
                 buttonText={<Trans>FOODNOUNS DAO</Trans>}
@@ -121,32 +124,28 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
-          </Navbar.Collapse>
-          <Navbar.Collapse className="justify-content-end">
-            <Nav.Link
-              href={externalURL(ExternalURL.discord)}
+            <DropdownButton 
+              title="Socials" 
               className={classes.nounsNavLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeNav}
+              id="collapsible-nav-dropdown"
             >
-              <NavBarButton
-                buttonText={<Trans>Discord</Trans>}
-                buttonStyle={nonWalletButtonStyle}
-              />
-            </Nav.Link>
-            <Nav.Link
-              href={externalURL(ExternalURL.twitter)}
-              className={classes.nounsNavLink}
-              target="_blank"
-              rel="noreferrer"
-              onClick={closeNav}
-            >
-              <NavBarButton
-                buttonText={<Trans>Twitter</Trans>}
-                buttonStyle={nonWalletButtonStyle}
-              />
-            </Nav.Link>
+                  <NavDropdown.Item 
+                    href={externalURL(ExternalURL.discord)}
+                    className={classes.nounsNavLink}
+                    target="_blank"
+                  >
+                    
+                    Discord
+                  </NavDropdown.Item>
+                  <NavDropdown.Divider />
+                  <NavDropdown.Item 
+                    href={externalURL(ExternalURL.twitter)}
+                    className={classes.nounsNavLink}
+                    target="_blank"
+                  >
+                    Twitter
+                  </NavDropdown.Item>
+            </DropdownButton>
           </Navbar.Collapse>
         </Container>
       </Navbar>
