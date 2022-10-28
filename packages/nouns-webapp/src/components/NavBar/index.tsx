@@ -124,7 +124,7 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
-            <DropdownButton 
+            <NavDropdown 
               title="Socials" 
               className={classes.nounsNavLink}
               id="collapsible-nav-dropdown"
@@ -134,8 +134,11 @@ const NavBar = () => {
                     className={classes.nounsNavLink}
                     target="_blank"
                   >
-                    
-                    Discord
+                    <NavBarButton
+                      buttonText={<Trans>Discord</Trans>}
+                      buttonIcon={<FontAwesomeIcon icon={faPlay} />}
+                      buttonStyle={nonWalletButtonStyle}
+                    />
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item 
@@ -143,9 +146,19 @@ const NavBar = () => {
                     className={classes.nounsNavLink}
                     target="_blank"
                   >
-                    Twitter
+                    <NavBarButton
+                      buttonText={<Trans>Twitter</Trans>}
+                      buttonIcon={<FontAwesomeIcon icon={faPlay} />}
+                      buttonStyle={nonWalletButtonStyle}
+                    />
                   </NavDropdown.Item>
-            </DropdownButton>
+                  
+            </NavDropdown>
+
+            <Nav.Link
+              className={classes.nounsNavLink}
+            >
+            </Nav.Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
