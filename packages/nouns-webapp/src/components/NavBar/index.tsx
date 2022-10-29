@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, Container } from 'react-bootstrap';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
+import NavBarDropdown from './NavBarDropdown'
 import testnetNoun from '../../assets/testnet-noun.png';
 import config, { CHAIN_ID } from '../../config';
 import { utils } from 'ethers';
@@ -124,7 +124,7 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
-            <NavDropdown 
+            {/* <NavDropdown 
               title="Socials" 
               className={classes.nounsNavLink}
               id="collapsible-nav-dropdown"
@@ -153,12 +153,16 @@ const NavBar = () => {
                     />
                   </NavDropdown.Item>
                   
-            </NavDropdown>
+            </NavDropdown> */}
 
             <Nav.Link
               className={classes.nounsNavLink}
             >
             </Nav.Link>
+            <NavBarDropdown
+              buttonText={<Trans>Socials</Trans>}
+              buttonIcon={<FontAwesomeIcon icon={faHashtag} />}
+            />
           </Navbar.Collapse>
         </Container>
       </Navbar>
