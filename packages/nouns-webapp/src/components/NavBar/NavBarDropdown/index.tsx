@@ -1,12 +1,11 @@
+import clsx from 'clsx';
 import classes from './NavBarDropdown.module.css';
 import NavBarButton from '../../NavBarButton';
-import { Link } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { Trans } from '@lingui/macro';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHashtag } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { ExternalURL, externalURL } from '../../../utils/externalURL';
+import { useAppSelector } from '../../../hooks';
 
 
 
@@ -88,18 +87,21 @@ const NavBarDropdown: React.FC<NavBarButtonProps> = props => {
   };
   let isDisabled = disabled ?? false;
   const closeNav = () => setIsNavExpanded(false);
-
+  
   return (
     <>
-      <div
+      <div 
+        className={`${classes.wrapper} ${getNavBarButtonVariant(buttonStyle)}`}
         onClick={(e)=> handleDropDownFocus(open)}
       > 
-        <NavBarButton
-          buttonText={<Trans>Socials</Trans>}
-          buttonIcon={<FontAwesomeIcon icon={faHashtag} />}
-        />
+        <div
+          className={clsx(classes.button, isDisabled ? classes.btnDisabled : classes.btnEnabled)}
+        >
+          {buttonIcon && <div className={classes.icon}>{buttonIcon}</div>}
+          <div>{buttonText}</div>
+        </div>
         {open && (
-          <div>
+          <div className="dropdownMenu">
             <Nav.Link
               href={externalURL(ExternalURL.discord)}
               className={classes.nounsNavLink}
@@ -122,10 +124,7 @@ const NavBarDropdown: React.FC<NavBarButtonProps> = props => {
                 buttonText={<Trans>Twitter</Trans>}
               />
             </Nav.Link>
-
           </div>
-
-          
         )}
       </div>
     </>
