@@ -5,7 +5,6 @@ import { useEtherBalance } from '@usedapp/core';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar, Container } from 'react-bootstrap';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import NavBarDropdown from './NavBarDropdown'
 import testnetNoun from '../../assets/testnet-noun.png';
 import config, { CHAIN_ID } from '../../config';
@@ -18,7 +17,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
-import { faHashtag } from '@fortawesome/free-solid-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 import NavBarTreasury from '../NavBarTreasury';
 import NavWallet from '../NavWallet';
 import { Trans } from '@lingui/macro';
@@ -90,7 +89,6 @@ const NavBar = () => {
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
           <Navbar.Collapse className="justify-content-end">
-            <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
 
             <Nav.Link as={Link} to="/vote" className={classes.nounsNavLink} onClick={closeNav}>
               <NavBarButton
@@ -99,6 +97,7 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
+
             <Nav.Link
               href={externalURL(ExternalURL.notion)}
               className={classes.nounsNavLink}
@@ -112,6 +111,7 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
+
             <Nav.Link
               as={Link}
               to="/playground"
@@ -124,45 +124,13 @@ const NavBar = () => {
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
-            {/* <NavDropdown 
-              title="Socials" 
-              className={classes.nounsNavLink}
-              id="collapsible-nav-dropdown"
-            >
-                  <NavDropdown.Item 
-                    href={externalURL(ExternalURL.discord)}
-                    className={classes.nounsNavLink}
-                    target="_blank"
-                  >
-                    <NavBarButton
-                      buttonText={<Trans>Discord</Trans>}
-                      buttonIcon={<FontAwesomeIcon icon={faPlay} />}
-                      buttonStyle={nonWalletButtonStyle}
-                    />
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item 
-                    href={externalURL(ExternalURL.twitter)}
-                    className={classes.nounsNavLink}
-                    target="_blank"
-                  >
-                    <NavBarButton
-                      buttonText={<Trans>Twitter</Trans>}
-                      buttonIcon={<FontAwesomeIcon icon={faPlay} />}
-                      buttonStyle={nonWalletButtonStyle}
-                    />
-                  </NavDropdown.Item>
-                  
-            </NavDropdown> */}
 
-            <Nav.Link
-              className={classes.nounsNavLink}
-            >
-            </Nav.Link>
             <NavBarDropdown
-              buttonText={<Trans>Socials</Trans>}
-              buttonIcon={<FontAwesomeIcon icon={faHashtag} />}
+              buttonText={<Trans>Links</Trans>}
+              buttonIcon={<FontAwesomeIcon icon={faLink} />}
+              buttonStyle={nonWalletButtonStyle}
             />
+            <NavWallet address={activeAccount || '0'} buttonStyle={nonWalletButtonStyle} />{' '}
           </Navbar.Collapse>
         </Container>
       </Navbar>
