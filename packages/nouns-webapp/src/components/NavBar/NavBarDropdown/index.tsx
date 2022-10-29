@@ -5,7 +5,6 @@ import { Nav } from 'react-bootstrap';
 import { Trans } from '@lingui/macro';
 import { useState } from 'react';
 import { ExternalURL, externalURL } from '../../../utils/externalURL';
-import { useAppSelector } from '../../../hooks';
 
 
 
