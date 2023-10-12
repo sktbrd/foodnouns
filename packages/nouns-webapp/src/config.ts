@@ -55,25 +55,51 @@ export const createNetworkWsUrl = (network: string): string => {
   return custom || `wss://${network}.infura.io/ws/v3/${INFURA_PROJECT_ID}`;
 };
 
-const app: Record<SupportedChains, AppConfig> = {
-  [ChainId.Rinkeby]: {
-    jsonRpcUri: createNetworkHttpUrl('rinkeby'),
-    wsRpcUri: createNetworkWsUrl('rinkeby'),
-    subgraphApiUri: 'https://api.thegraph.com/subgraphs/name/yanuar-ar/foodnouns',
-    enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
+const app: {
+  nouns: Record<SupportedChains, AppConfig>,
+  foodnouns: Record<SupportedChains, AppConfig>
+} = {
+  nouns: {
+    [ChainId.Rinkeby]: {
+      jsonRpcUri: createNetworkHttpUrl('rinkeby'),
+      wsRpcUri: createNetworkWsUrl('rinkeby'),
+      subgraphApiUri: 'https://api.thegraph.com/subgraphs/name/yanuar-ar/foodnouns',
+      enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
+    },
+    [ChainId.Mainnet]: {
+      jsonRpcUri: createNetworkHttpUrl('mainnet'),
+      wsRpcUri: createNetworkWsUrl('mainnet'),
+      subgraphApiUri:
+        'https://api.goldsky.com/api/public/project_cldf2o9pqagp43svvbk5u3kmo/subgraphs/nouns/prod/gn',
+      enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
+    },
+    [ChainId.Hardhat]: {
+      jsonRpcUri: 'http://localhost:8545',
+      wsRpcUri: 'ws://localhost:8545',
+      subgraphApiUri: 'http://localhost:8000/subgraphs/name/nounsdao/nouns-subgraph',
+      enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
+    },
   },
-  [ChainId.Mainnet]: {
-    jsonRpcUri: createNetworkHttpUrl('mainnet'),
-    wsRpcUri: createNetworkWsUrl('mainnet'),
-    subgraphApiUri: 'https://api.thegraph.com/subgraphs/name/yanuar-ar/foodnouns',
-    enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
-  },
-  [ChainId.Hardhat]: {
-    jsonRpcUri: 'http://localhost:8545',
-    wsRpcUri: 'ws://localhost:8545',
-    subgraphApiUri: '',
-    enableHistory: false,
-  },
+  foodnouns: {
+    [ChainId.Rinkeby]: {
+      jsonRpcUri: createNetworkHttpUrl('rinkeby'),
+      wsRpcUri: createNetworkWsUrl('rinkeby'),
+      subgraphApiUri: 'https://api.thegraph.com/subgraphs/name/yanuar-ar/foodnouns',
+      enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
+    },
+    [ChainId.Mainnet]: {
+      jsonRpcUri: createNetworkHttpUrl('mainnet'),
+      wsRpcUri: createNetworkWsUrl('mainnet'),
+      subgraphApiUri: 'https://api.thegraph.com/subgraphs/name/yanuar-ar/foodnouns',
+      enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
+    },
+    [ChainId.Hardhat]: {
+      jsonRpcUri: 'http://localhost:8545',
+      wsRpcUri: 'ws://localhost:8545',
+      subgraphApiUri: '',
+      enableHistory: false,
+    },
+  }
 };
 
 const externalAddresses: Record<SupportedChains, ExternalContractAddresses> = {
@@ -92,12 +118,13 @@ const getAddresses = (): ContractAddresses => {
   let nounsAddresses = {} as NounsContractAddresses;
   try {
     nounsAddresses = getContractAddressesForChainOrThrow(CHAIN_ID);
-  } catch {}
+  } catch { }
   return { ...nounsAddresses, ...externalAddresses[CHAIN_ID] };
 };
 
 const config = {
-  app: app[CHAIN_ID],
+  nounsApp: app.nouns[CHAIN_ID],
+  foodnounsApp: app.foodnouns[CHAIN_ID],
   addresses: getAddresses(),
 };
 

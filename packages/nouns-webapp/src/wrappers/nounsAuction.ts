@@ -65,9 +65,9 @@ export const useNounCanVoteTimestamp = (nounId: number) => {
   const pastAuctions = useAppSelector(state => state.pastAuctions.pastAuctions);
 
   const maybeNounCanVoteTimestamp = pastAuctions.find((auction: AuctionState, i: number) => {
-    const maybeNounId = auction.activeAuction?.nounId;
+    const maybeNounId = auction.foodnouns.activeAuction?.nounId;
     return maybeNounId ? EthersBN.from(maybeNounId).eq(EthersBN.from(nextNounIdForQuery)) : false;
-  })?.activeAuction?.startTime;
+  })?.foodnouns.activeAuction?.startTime;
 
   if (!maybeNounCanVoteTimestamp) {
     // This state only occurs during loading flashes

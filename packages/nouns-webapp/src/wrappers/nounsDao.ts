@@ -439,6 +439,7 @@ export const useProposal = (id: string | number): Proposal | undefined => {
 
 export const useCastVote = () => {
   const { send: castVote, state: castVoteState } = useContractFunction(
+    // @ts-ignore
     nounsDaoContract,
     'castVote',
   );
@@ -447,6 +448,7 @@ export const useCastVote = () => {
 
 export const useCastVoteWithReason = () => {
   const { send: castVoteWithReason, state: castVoteWithReasonState } = useContractFunction(
+    // @ts-ignore
     nounsDaoContract,
     'castVoteWithReason',
   );
@@ -454,12 +456,14 @@ export const useCastVoteWithReason = () => {
 };
 
 export const usePropose = () => {
+  // @ts-ignore
   const { send: propose, state: proposeState } = useContractFunction(nounsDaoContract, 'propose');
   return { propose, proposeState };
 };
 
 export const useQueueProposal = () => {
   const { send: queueProposal, state: queueProposalState } = useContractFunction(
+    // @ts-ignore
     nounsDaoContract,
     'queue',
   );
@@ -468,6 +472,7 @@ export const useQueueProposal = () => {
 
 export const useExecuteProposal = () => {
   const { send: executeProposal, state: executeProposalState } = useContractFunction(
+    // @ts-ignore
     nounsDaoContract,
     'execute',
   );

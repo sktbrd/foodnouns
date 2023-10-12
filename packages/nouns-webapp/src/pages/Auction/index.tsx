@@ -40,6 +40,7 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
       }
     } else {
       // no noun path id set
+      console.log(onDisplayAuction)
       if (lastAuctionNounId) {
         dispatch(setOnDisplayAuctionNounId(lastAuctionNounId));
       }

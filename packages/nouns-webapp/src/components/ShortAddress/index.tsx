@@ -30,7 +30,7 @@ const ShortAddress: React.FC<{
               rel="noreferrer"
               style={{ textDecoration: 'none', color: 'black' }}
             >
-              <Identicon size={size} address={address} provider={provider} />
+              <Identicon size={size} address={address} provider={provider as any} />
             </a>
           </div>
         )}

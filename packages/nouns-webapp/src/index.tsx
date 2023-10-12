@@ -21,6 +21,8 @@ import auction, {
 import onDisplayAuction, {
   setLastAuctionNounId,
   setOnDisplayAuctionNounId,
+  setLastAuctionFoodNounId,
+  setOnDisplayAuctionFoodNounId,
 } from './state/slices/onDisplayAuction';
 import { ApolloProvider, useQuery } from '@apollo/client';
 import { clientFactory, latestAuctionsQuery } from './wrappers/subgraph';
@@ -93,7 +95,8 @@ const useDappConfig = {
   },
 };
 
-const client = clientFactory(config.app.subgraphApiUri);
+const foodnounsClient = clientFactory(config.foodnounsApp.subgraphApiUri);
+const nounsClient = clientFactory(config.nounsApp.subgraphApiUri);
 
 const Updaters = () => {
   return (
@@ -109,16 +112,29 @@ const ChainSubscriber: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const loadState = async () => {
-    const wsProvider = new WebSocketProvider(config.app.wsRpcUri);
+    const nounsWsProvider = new WebSocketProvider(config.nounsApp.wsRpcUri);
+    const foodnounsWsProvider = new WebSocketProvider(config.foodnounsApp.wsRpcUri);
+
     const nounsAuctionHouseContract = NounsAuctionHouseFactory.connect(
       config.addresses.nounsAuctionHouseProxy,
-      wsProvider,
+      foodnounsWsProvider,
     );
 
-    const bidFilter = nounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
-    const extendedFilter = nounsAuctionHouseContract.filters.AuctionExtended(null, null);
-    const createdFilter = nounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
-    const settledFilter = nounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
+    const foodnounsAuctionHouseContract = NounsAuctionHouseFactory.connect(
+      config.addresses.nounsAuctionHouseProxy,
+      nounsWsProvider,
+    );
+
+    const nounsbidFilter = nounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
+    const nounsextendedFilter = nounsAuctionHouseContract.filters.AuctionExtended(null, null);
+    const nounscreatedFilter = nounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
+    const nounssettledFilter = nounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
+
+    const foodnounsbidFilter = foodnounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
+    const foodnounsextendedFilter = foodnounsAuctionHouseContract.filters.AuctionExtended(null, null);
+    const foodnounscreatedFilter = foodnounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
+    const foodnounssettledFilter = foodnounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
+
     const processBidFilter = async (
       nounId: BigNumberish,
       sender: string,
@@ -132,7 +148,7 @@ const ChainSubscriber: React.FC = () => {
         appendBid(reduxSafeBid({ nounId, sender, value, extended, transactionHash, timestamp })),
       );
     };
-    const processAuctionCreated = (
+    const processNounAuctionCreated = (
       nounId: BigNumberish,
       startTime: BigNumberish,
       endTime: BigNumberish,
@@ -145,6 +161,19 @@ const ChainSubscriber: React.FC = () => {
       dispatch(setOnDisplayAuctionNounId(nounIdNumber));
       dispatch(setLastAuctionNounId(nounIdNumber));
     };
+    const processFoodNounAuctionCreated = (
+      nounId: BigNumberish,
+      startTime: BigNumberish,
+      endTime: BigNumberish,
+    ) => {
+      dispatch(
+        setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false })),
+      );
+      const nounIdNumber = BigNumber.from(nounId).toNumber();
+      dispatch(push(nounPath(nounIdNumber)));
+      dispatch(setOnDisplayAuctionFoodNounId(nounIdNumber));
+      dispatch(setLastAuctionFoodNounId(nounIdNumber));
+    };
     const processAuctionExtended = (nounId: BigNumberish, endTime: BigNumberish) => {
       dispatch(setAuctionExtended({ nounId, endTime }));
     };
@@ -153,27 +182,53 @@ const ChainSubscriber: React.FC = () => {
     };
 
     // Fetch the current auction
-    const currentAuction = await nounsAuctionHouseContract.auction();
-    dispatch(setFullAuction(reduxSafeAuction(currentAuction)));
-    dispatch(setLastAuctionNounId(currentAuction.nounId.toNumber()));
+    const foodnounscurrentAuction = await nounsAuctionHouseContract.auction();
+    dispatch(setFullAuction(reduxSafeAuction(foodnounscurrentAuction)));
+    dispatch(setLastAuctionFoodNounId(foodnounscurrentAuction.nounId.toNumber()));
 
     // Fetch the previous 24hours of  bids
-    const previousBids = await nounsAuctionHouseContract.queryFilter(bidFilter, 0 - BLOCKS_PER_DAY);
-    for (let event of previousBids) {
+    const foodnounspreviousBids = await nounsAuctionHouseContract.queryFilter(nounsbidFilter, 0 - BLOCKS_PER_DAY);
+    for (let event of foodnounspreviousBids) {
       if (event.args === undefined) return;
       processBidFilter(...(event.args as [BigNumber, string, BigNumber, boolean]), event);
     }
 
-    nounsAuctionHouseContract.on(bidFilter, (nounId, sender, value, extended, event) =>
+     // Fetch the current auction
+     const nounscurrentAuction = await nounsAuctionHouseContract.auction();
+     dispatch(setFullAuction(reduxSafeAuction(nounscurrentAuction)));
+     dispatch(setLastAuctionNounId(nounscurrentAuction.nounId.toNumber()));
+ 
+     // Fetch the previous 24hours of  bids
+     const nounspreviousBids = await nounsAuctionHouseContract.queryFilter(nounsbidFilter, 0 - BLOCKS_PER_DAY);
+     for (let event of nounspreviousBids) {
+       if (event.args === undefined) return;
+       processBidFilter(...(event.args as [BigNumber, string, BigNumber, boolean]), event);
+     }
+
+    nounsAuctionHouseContract.on(nounsbidFilter, (nounId, sender, value, extended, event) =>
       processBidFilter(nounId, sender, value, extended, event),
     );
-    nounsAuctionHouseContract.on(createdFilter, (nounId, startTime, endTime) =>
-      processAuctionCreated(nounId, startTime, endTime),
+    nounsAuctionHouseContract.on(nounscreatedFilter, (nounId, startTime, endTime) =>
+      processFoodNounAuctionCreated(nounId, startTime, endTime),
     );
-    nounsAuctionHouseContract.on(extendedFilter, (nounId, endTime) =>
+    nounsAuctionHouseContract.on(nounsextendedFilter, (nounId, endTime) =>
       processAuctionExtended(nounId, endTime),
     );
-    nounsAuctionHouseContract.on(settledFilter, (nounId, winner, amount) =>
+    nounsAuctionHouseContract.on(nounssettledFilter, (nounId, winner, amount) =>
+      processAuctionSettled(nounId, winner, amount),
+    );
+
+
+    foodnounsAuctionHouseContract.on(foodnounsbidFilter, (nounId, sender, value, extended, event) =>
+      processBidFilter(nounId, sender, value, extended, event),
+    );
+    foodnounsAuctionHouseContract.on(foodnounscreatedFilter, (nounId, startTime, endTime) =>
+      processFoodNounAuctionCreated(nounId, startTime, endTime),
+    );
+    foodnounsAuctionHouseContract.on(foodnounsextendedFilter, (nounId, endTime) =>
+      processAuctionExtended(nounId, endTime),
+    );
+    foodnounsAuctionHouseContract.on(foodnounssettledFilter, (nounId, winner, amount) =>
       processAuctionSettled(nounId, winner, amount),
     );
   };
@@ -204,7 +259,7 @@ ReactDOM.render(
             provider => new Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
           }
         >
-          <ApolloProvider client={client}>
+          <ApolloProvider client={}>
             <PastAuctions />
             <DAppProvider config={useDappConfig}>
               <LanguageProvider>

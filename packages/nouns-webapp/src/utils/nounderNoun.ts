@@ -17,10 +17,16 @@ const emptyNounderAuction = (onDisplayAuctionId: number): Auction => {
   };
 };
 
-const findAuction = (id: BigNumber, auctions: AuctionState[]): Auction | undefined => {
-  return auctions.find(auction => {
-    return BigNumber.from(auction.activeAuction?.nounId).eq(id);
-  })?.activeAuction;
+const findAuction = (id: BigNumber, auctions: AuctionState[], isFoodnoun = true): Auction | undefined => {
+  if (isFoodnoun) {
+    return auctions.find(auction => {
+      return BigNumber.from(auction.foodnouns.activeAuction?.nounId).eq(id);
+    })?.foodnouns.activeAuction;
+  } else {
+    return auctions.find(auction => {
+      return BigNumber.from(auction.nouns.activeAuction?.nounId).eq(id);
+    })?.nouns.activeAuction;
+  }
 };
 
 /**
@@ -32,10 +38,11 @@ const findAuction = (id: BigNumber, auctions: AuctionState[]): Auction | undefin
 export const generateEmptyNounderAuction = (
   nounId: BigNumber,
   pastAuctions: AuctionState[],
+  isFoodnoun = true,
 ): Auction => {
   const nounderAuction = emptyNounderAuction(nounId.toNumber());
   // use nounderAuction.nounId + 1 to get mint time
-  const auctionAbove = findAuction(nounId.add(1), pastAuctions);
+  const auctionAbove = findAuction(nounId.add(1), pastAuctions, isFoodnoun);
   const auctionAboveStartTime = auctionAbove && BigNumber.from(auctionAbove.startTime);
   if (auctionAboveStartTime) nounderAuction.startTime = auctionAboveStartTime.toJSON();
 
