@@ -74,9 +74,10 @@ const app: {
       enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
     },
     [ChainId.Hardhat]: {
-      jsonRpcUri: 'http://localhost:8545',
-      wsRpcUri: 'ws://localhost:8545',
-      subgraphApiUri: 'http://localhost:8000/subgraphs/name/nounsdao/nouns-subgraph',
+      jsonRpcUri: createNetworkHttpUrl('mainnet'),
+      wsRpcUri: createNetworkWsUrl('mainnet'),
+      subgraphApiUri:
+        'https://api.goldsky.com/api/public/project_cldf2o9pqagp43svvbk5u3kmo/subgraphs/nouns/prod/gn',
       enableHistory: process.env.REACT_APP_ENABLE_HISTORY === 'true',
     },
   },

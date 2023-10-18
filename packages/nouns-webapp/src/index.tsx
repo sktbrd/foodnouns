@@ -18,12 +18,14 @@ import auction, {
   setAuctionSettled,
   setFullAuction,
 } from './state/slices/auction';
-import onDisplayAuction, {
+import onDisplayNounAuction, {
   setLastAuctionNounId,
   setOnDisplayAuctionNounId,
+} from './state/slices/onDisplayNounAuction';
+import onDisplayFoodNounAuction, {
   setLastAuctionFoodNounId,
   setOnDisplayAuctionFoodNounId,
-} from './state/slices/onDisplayAuction';
+} from './state/slices/onDisplayFoodNounAuction';
 import { ApolloProvider, useQuery } from '@apollo/client';
 import { clientFactory, latestAuctionsQuery } from './wrappers/subgraph';
 import { useEffect } from 'react';
@@ -45,6 +47,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { nounPath } from './utils/history';
 import { push } from 'connected-react-router';
 import { LanguageProvider } from './i18n/LanguageProvider';
+import { Auction } from './wrappers/nounsAuction';
 
 dotenv.config();
 
@@ -58,7 +61,8 @@ const createRootReducer = (history: History) =>
     auction,
     logs,
     pastAuctions,
-    onDisplayAuction,
+    onDisplayNounAuction,
+    onDisplayFoodNounAuction
   });
 
 export default function configureStore(preloadedState: PreloadedState<any>) {
@@ -95,8 +99,7 @@ const useDappConfig = {
   },
 };
 
-const foodnounsClient = clientFactory(config.foodnounsApp.subgraphApiUri);
-const nounsClient = clientFactory(config.nounsApp.subgraphApiUri);
+const client = clientFactory(config.foodnounsApp.subgraphApiUri);
 
 const Updaters = () => {
   return (
@@ -112,28 +115,28 @@ const ChainSubscriber: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const loadState = async () => {
-    const nounsWsProvider = new WebSocketProvider(config.nounsApp.wsRpcUri);
-    const foodnounsWsProvider = new WebSocketProvider(config.foodnounsApp.wsRpcUri);
+    const nounswsProvider = new WebSocketProvider(config.foodnounsApp.wsRpcUri);
+    const foodnounswsProvider = new WebSocketProvider(config.foodnounsApp.wsRpcUri);
 
     const nounsAuctionHouseContract = NounsAuctionHouseFactory.connect(
       config.addresses.nounsAuctionHouseProxy,
-      foodnounsWsProvider,
+      nounswsProvider,
     );
 
     const foodnounsAuctionHouseContract = NounsAuctionHouseFactory.connect(
       config.addresses.nounsAuctionHouseProxy,
-      nounsWsProvider,
+      foodnounswsProvider,
     );
 
-    const nounsbidFilter = nounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
-    const nounsextendedFilter = nounsAuctionHouseContract.filters.AuctionExtended(null, null);
-    const nounscreatedFilter = nounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
-    const nounssettledFilter = nounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
+    const nounbidFilter = nounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
+    const nounextendedFilter = nounsAuctionHouseContract.filters.AuctionExtended(null, null);
+    const nouncreatedFilter = nounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
+    const nounsettledFilter = nounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
 
-    const foodnounsbidFilter = foodnounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
-    const foodnounsextendedFilter = foodnounsAuctionHouseContract.filters.AuctionExtended(null, null);
-    const foodnounscreatedFilter = foodnounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
-    const foodnounssettledFilter = foodnounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
+    const foodnounbidFilter = foodnounsAuctionHouseContract.filters.AuctionBid(null, null, null, null);
+    const foodnounextendedFilter = foodnounsAuctionHouseContract.filters.AuctionExtended(null, null);
+    const foodnouncreatedFilter = foodnounsAuctionHouseContract.filters.AuctionCreated(null, null, null);
+    const foodnounsettledFilter = foodnounsAuctionHouseContract.filters.AuctionSettled(null, null, null);
 
     const processBidFilter = async (
       nounId: BigNumberish,
@@ -148,31 +151,24 @@ const ChainSubscriber: React.FC = () => {
         appendBid(reduxSafeBid({ nounId, sender, value, extended, transactionHash, timestamp })),
       );
     };
-    const processNounAuctionCreated = (
+    const processAuctionCreated = (
       nounId: BigNumberish,
       startTime: BigNumberish,
       endTime: BigNumberish,
+      nounAuction = false,
     ) => {
       dispatch(
-        setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false })),
+        setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false, nounAuction })),
       );
       const nounIdNumber = BigNumber.from(nounId).toNumber();
       dispatch(push(nounPath(nounIdNumber)));
-      dispatch(setOnDisplayAuctionNounId(nounIdNumber));
-      dispatch(setLastAuctionNounId(nounIdNumber));
-    };
-    const processFoodNounAuctionCreated = (
-      nounId: BigNumberish,
-      startTime: BigNumberish,
-      endTime: BigNumberish,
-    ) => {
-      dispatch(
-        setActiveAuction(reduxSafeNewAuction({ nounId, startTime, endTime, settled: false })),
-      );
-      const nounIdNumber = BigNumber.from(nounId).toNumber();
-      dispatch(push(nounPath(nounIdNumber)));
-      dispatch(setOnDisplayAuctionFoodNounId(nounIdNumber));
-      dispatch(setLastAuctionFoodNounId(nounIdNumber));
+      if (nounAuction) {
+        dispatch(setOnDisplayAuctionNounId(nounIdNumber));
+        dispatch(setLastAuctionNounId(nounIdNumber));
+      } else {
+        dispatch(setOnDisplayAuctionFoodNounId(nounIdNumber));
+        dispatch(setLastAuctionFoodNounId(nounIdNumber));
+      }
     };
     const processAuctionExtended = (nounId: BigNumberish, endTime: BigNumberish) => {
       dispatch(setAuctionExtended({ nounId, endTime }));
@@ -182,53 +178,54 @@ const ChainSubscriber: React.FC = () => {
     };
 
     // Fetch the current auction
-    const foodnounscurrentAuction = await nounsAuctionHouseContract.auction();
-    dispatch(setFullAuction(reduxSafeAuction(foodnounscurrentAuction)));
-    dispatch(setLastAuctionFoodNounId(foodnounscurrentAuction.nounId.toNumber()));
+    let fetchedAuction = await nounsAuctionHouseContract.auction();
+    const currentNounAuction: Auction = { ...fetchedAuction, nounAuction: true };
+    dispatch(setFullAuction(reduxSafeAuction(currentNounAuction)));
+    dispatch(setLastAuctionNounId(currentNounAuction.nounId.toNumber()));
+
+    // Fetch the current auction
+    fetchedAuction = await nounsAuctionHouseContract.auction();
+    const currentFoodNounAuction: Auction = { ...fetchedAuction, nounAuction: false };
+    dispatch(setFullAuction(reduxSafeAuction(currentFoodNounAuction)));
+    dispatch(setLastAuctionFoodNounId(currentFoodNounAuction.nounId.toNumber()));
 
     // Fetch the previous 24hours of  bids
-    const foodnounspreviousBids = await nounsAuctionHouseContract.queryFilter(nounsbidFilter, 0 - BLOCKS_PER_DAY);
-    for (let event of foodnounspreviousBids) {
+    const previousNounBids = await nounsAuctionHouseContract.queryFilter(nounbidFilter, 0 - BLOCKS_PER_DAY);
+    for (let event of previousNounBids) {
       if (event.args === undefined) return;
       processBidFilter(...(event.args as [BigNumber, string, BigNumber, boolean]), event);
     }
 
-     // Fetch the current auction
-     const nounscurrentAuction = await nounsAuctionHouseContract.auction();
-     dispatch(setFullAuction(reduxSafeAuction(nounscurrentAuction)));
-     dispatch(setLastAuctionNounId(nounscurrentAuction.nounId.toNumber()));
- 
-     // Fetch the previous 24hours of  bids
-     const nounspreviousBids = await nounsAuctionHouseContract.queryFilter(nounsbidFilter, 0 - BLOCKS_PER_DAY);
-     for (let event of nounspreviousBids) {
-       if (event.args === undefined) return;
-       processBidFilter(...(event.args as [BigNumber, string, BigNumber, boolean]), event);
-     }
+    // Fetch the previous 24hours of  bids
+    const previousFoodNounBids = await foodnounsAuctionHouseContract.queryFilter(foodnounbidFilter, 0 - BLOCKS_PER_DAY);
+    for (let event of previousFoodNounBids) {
+      if (event.args === undefined) return;
+      processBidFilter(...(event.args as [BigNumber, string, BigNumber, boolean]), event);
+    }
 
-    nounsAuctionHouseContract.on(nounsbidFilter, (nounId, sender, value, extended, event) =>
+    nounsAuctionHouseContract.on(nounbidFilter, (nounId, sender, value, extended, event) =>
       processBidFilter(nounId, sender, value, extended, event),
     );
-    nounsAuctionHouseContract.on(nounscreatedFilter, (nounId, startTime, endTime) =>
-      processFoodNounAuctionCreated(nounId, startTime, endTime),
+    nounsAuctionHouseContract.on(nouncreatedFilter, (nounId, startTime, endTime) =>
+      processAuctionCreated(nounId, startTime, endTime),
     );
-    nounsAuctionHouseContract.on(nounsextendedFilter, (nounId, endTime) =>
+    nounsAuctionHouseContract.on(nounextendedFilter, (nounId, endTime) =>
       processAuctionExtended(nounId, endTime),
     );
-    nounsAuctionHouseContract.on(nounssettledFilter, (nounId, winner, amount) =>
+    nounsAuctionHouseContract.on(nounsettledFilter, (nounId, winner, amount) =>
       processAuctionSettled(nounId, winner, amount),
     );
 
-
-    foodnounsAuctionHouseContract.on(foodnounsbidFilter, (nounId, sender, value, extended, event) =>
+    foodnounsAuctionHouseContract.on(foodnounbidFilter, (nounId, sender, value, extended, event) =>
       processBidFilter(nounId, sender, value, extended, event),
     );
-    foodnounsAuctionHouseContract.on(foodnounscreatedFilter, (nounId, startTime, endTime) =>
-      processFoodNounAuctionCreated(nounId, startTime, endTime),
+    foodnounsAuctionHouseContract.on(foodnouncreatedFilter, (nounId, startTime, endTime) =>
+      processAuctionCreated(nounId, startTime, endTime),
     );
-    foodnounsAuctionHouseContract.on(foodnounsextendedFilter, (nounId, endTime) =>
+    foodnounsAuctionHouseContract.on(foodnounextendedFilter, (nounId, endTime) =>
       processAuctionExtended(nounId, endTime),
     );
-    foodnounsAuctionHouseContract.on(foodnounssettledFilter, (nounId, winner, amount) =>
+    foodnounsAuctionHouseContract.on(foodnounsettledFilter, (nounId, winner, amount) =>
       processAuctionSettled(nounId, winner, amount),
     );
   };
@@ -238,7 +235,7 @@ const ChainSubscriber: React.FC = () => {
 };
 
 const PastAuctions: React.FC = () => {
-  const latestAuctionId = useAppSelector(state => state.onDisplayAuction.lastAuctionNounId);
+  const latestAuctionId = useAppSelector(state => state.onDisplayFoodNounAuction.lastAuctionFoodNounId);
   const { data } = useQuery(latestAuctionsQuery());
   const dispatch = useAppDispatch();
 
@@ -259,7 +256,7 @@ ReactDOM.render(
             provider => new Web3Provider(provider) // this will vary according to whether you use e.g. ethers or web3.js
           }
         >
-          <ApolloProvider client={}>
+          <ApolloProvider client={client}>
             <PastAuctions />
             <DAppProvider config={useDappConfig}>
               <LanguageProvider>

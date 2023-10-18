@@ -9,25 +9,17 @@ import {
 import { Auction as IAuction } from '../../wrappers/nounsAuction';
 
 export interface AuctionState {
-  foodnouns: {
-    activeAuction?: IAuction;
-    bids: BidEvent[];
-  },
-  nouns: {
-    activeAuction?: IAuction;
-    bids: BidEvent[];
-  }
+  activeNounAuction?: IAuction;
+  activeFoodNounAuction?: IAuction;
+  nounBids: BidEvent[];
+  foodnounBids: BidEvent[];
 }
 
 const initialState: AuctionState = {
-  foodnouns: {
-    activeAuction: undefined,
-    bids: [],
-  },
-  nouns: {
-    activeAuction: undefined,
-    bids: [],
-  }
+  activeNounAuction: undefined,
+  activeFoodNounAuction: undefined,
+  nounBids: [],
+  foodnounBids: [],
 };
 
 export const reduxSafeNewAuction = (auction: AuctionCreateEvent): IAuction => ({
@@ -37,6 +29,7 @@ export const reduxSafeNewAuction = (auction: AuctionCreateEvent): IAuction => ({
   endTime: BigNumber.from(auction.endTime).toJSON(),
   nounId: BigNumber.from(auction.nounId).toJSON(),
   settled: false,
+  nounAuction: auction.nounAuction,
 });
 
 export const reduxSafeAuction = (auction: IAuction): IAuction => ({
@@ -46,6 +39,7 @@ export const reduxSafeAuction = (auction: IAuction): IAuction => ({
   endTime: BigNumber.from(auction.endTime).toJSON(),
   nounId: BigNumber.from(auction.nounId).toJSON(),
   settled: auction.settled,
+  nounAuction: auction.nounAuction,
 });
 
 export const reduxSafeBid = (bid: BidEvent): BidEvent => ({
@@ -78,82 +72,73 @@ export const auctionSlice = createSlice({
   name: 'auction',
   initialState,
   reducers: {
-    setActiveFoodNounAuction: (state, action: PayloadAction<AuctionCreateEvent>) => {
-      state.foodnouns.activeAuction = reduxSafeNewAuction(action.payload);
-      state.foodnouns.bids = [];
+    setActiveAuction: (state, action: PayloadAction<AuctionCreateEvent>) => {
+      if (action.payload.nounAuction) {
+        state.activeNounAuction = reduxSafeNewAuction(action.payload);
+        state.nounBids = [];
+      } else {
+        state.activeFoodNounAuction = reduxSafeNewAuction(action.payload);
+        state.foodnounBids = [];
+      }
       console.log('processed auction create', action.payload);
     },
-    setFullFoodNounAuction: (state, action: PayloadAction<IAuction>) => {
+    setFullAuction: (state, action: PayloadAction<IAuction>) => {
       console.log(`from set full auction: `, action.payload);
-      state.foodnouns.activeAuction = reduxSafeAuction(action.payload);
+      if (action.payload.nounAuction) {
+        state.activeNounAuction = reduxSafeAuction(action.payload);
+      } else {
+        state.activeFoodNounAuction = reduxSafeAuction(action.payload);
+      }
     },
-    appendFoodNounBid: (state, action: PayloadAction<BidEvent>) => {
-      if (!(state.foodnouns.activeAuction && auctionsEqual(state.foodnouns.activeAuction, action.payload))) return;
-      if (containsBid(state.foodnouns.bids, action.payload)) return;
-      state.foodnouns.bids = [reduxSafeBid(action.payload), ...state.foodnouns.bids];
-      const maxBid_ = maxBid(state.foodnouns.bids);
-      state.foodnouns.activeAuction.amount = BigNumber.from(maxBid_.value).toJSON();
-      state.foodnouns.activeAuction.bidder = maxBid_.sender;
-      console.log('processed bid', action.payload);
+    appendBid: (state, action: PayloadAction<BidEvent>) => {
+      if (!state.activeNounAuction || !state.activeFoodNounAuction) return;
+      if (auctionsEqual(state.activeNounAuction, action.payload)) {
+        if (containsBid(state.nounBids, action.payload)) return;
+        state.nounBids = [reduxSafeBid(action.payload), ...state.nounBids];
+        const maxBid_ = maxBid(state.nounBids);
+        state.activeNounAuction.amount = BigNumber.from(maxBid_.value).toJSON();
+        state.activeNounAuction.bidder = maxBid_.sender;
+        console.log('processed bid', action.payload);
+      } else if (auctionsEqual(state.activeFoodNounAuction, action.payload)) {
+        if (containsBid(state.foodnounBids, action.payload)) return;
+        state.foodnounBids = [reduxSafeBid(action.payload), ...state.foodnounBids];
+        const maxBid_ = maxBid(state.foodnounBids);
+        state.activeFoodNounAuction.amount = BigNumber.from(maxBid_.value).toJSON();
+        state.activeFoodNounAuction.bidder = maxBid_.sender;
+        console.log('processed bid', action.payload);
+      }
     },
-    setFoodNounAuctionSettled: (state, action: PayloadAction<AuctionSettledEvent>) => {
-      if (!(state.foodnouns.activeAuction && auctionsEqual(state.foodnouns.activeAuction, action.payload))) return;
-      state.foodnouns.activeAuction.settled = true;
-      state.foodnouns.activeAuction.bidder = action.payload.winner;
-      state.foodnouns.activeAuction.amount = BigNumber.from(action.payload.amount).toJSON();
+    setAuctionSettled: (state, action: PayloadAction<AuctionSettledEvent>) => {
+      if (!state.activeFoodNounAuction || !state.activeNounAuction) return;
+      if (auctionsEqual(state.activeFoodNounAuction, action.payload)) {
+        state.activeNounAuction.settled = true;
+        state.activeNounAuction.bidder = action.payload.winner;
+        state.activeNounAuction.amount = BigNumber.from(action.payload.amount).toJSON();
+      } else if (auctionsEqual(state.activeNounAuction, action.payload)) {
+        state.activeFoodNounAuction.settled = true;
+        state.activeFoodNounAuction.bidder = action.payload.winner;
+        state.activeFoodNounAuction.amount = BigNumber.from(action.payload.amount).toJSON();
+      }
       console.log('processed auction settled', action.payload);
     },
-    setFoodNounAuctionExtended: (state, action: PayloadAction<AuctionExtendedEvent>) => {
-      if (!(state.foodnouns.activeAuction && auctionsEqual(state.foodnouns.activeAuction, action.payload))) return;
-      state.foodnouns.activeAuction.endTime = BigNumber.from(action.payload.endTime).toJSON();
-      console.log('processed auction extended', action.payload);
-    },
-
-    // noun methods
-    setActiveNounAuction: (state, action: PayloadAction<AuctionCreateEvent>) => {
-      state.nouns.activeAuction = reduxSafeNewAuction(action.payload);
-      state.nouns.bids = [];
-      console.log('processed auction create', action.payload);
-    },
-    setFullNounAuction: (state, action: PayloadAction<IAuction>) => {
-      console.log(`from set full auction: `, action.payload);
-      state.nouns.activeAuction = reduxSafeAuction(action.payload);
-    },
-    appendNounBid: (state, action: PayloadAction<BidEvent>) => {
-      if (!(state.nouns.activeAuction && auctionsEqual(state.nouns.activeAuction, action.payload))) return;
-      if (containsBid(state.nouns.bids, action.payload)) return;
-      state.nouns.bids = [reduxSafeBid(action.payload), ...state.nouns.bids];
-      const maxBid_ = maxBid(state.nouns.bids);
-      state.nouns.activeAuction.amount = BigNumber.from(maxBid_.value).toJSON();
-      state.nouns.activeAuction.bidder = maxBid_.sender;
-      console.log('processed bid', action.payload);
-    },
-    setNounAuctionSettled: (state, action: PayloadAction<AuctionSettledEvent>) => {
-      if (!(state.nouns.activeAuction && auctionsEqual(state.nouns.activeAuction, action.payload))) return;
-      state.nouns.activeAuction.settled = true;
-      state.nouns.activeAuction.bidder = action.payload.winner;
-      state.nouns.activeAuction.amount = BigNumber.from(action.payload.amount).toJSON();
-      console.log('processed auction settled', action.payload);
-    },
-    setNounAuctionExtended: (state, action: PayloadAction<AuctionExtendedEvent>) => {
-      if (!(state.nouns.activeAuction && auctionsEqual(state.nouns.activeAuction, action.payload))) return;
-      state.nouns.activeAuction.endTime = BigNumber.from(action.payload.endTime).toJSON();
+    setAuctionExtended: (state, action: PayloadAction<AuctionExtendedEvent>) => {
+      if (!state.activeNounAuction || !state.activeFoodNounAuction) return;
+      if (auctionsEqual(state.activeNounAuction, action.payload)) {
+        state.activeNounAuction.endTime = BigNumber.from(action.payload.endTime).toJSON();
+      } else if (auctionsEqual(state.activeFoodNounAuction, action.payload)) {
+        state.activeFoodNounAuction.endTime = BigNumber.from(action.payload.endTime).toJSON();
+      }
       console.log('processed auction extended', action.payload);
     },
   },
 });
 
 export const {
-  setActiveFoodNounAuction,
-  appendFoodNounBid,
-  setFoodNounAuctionExtended,
-  setFoodNounAuctionSettled,
-  setFullFoodNounAuction,
-  setActiveNounAuction,
-  appendNounBid,
-  setNounAuctionExtended,
-  setNounAuctionSettled,
-  setFullNounAuction,
+  setActiveAuction,
+  appendBid,
+  setAuctionExtended,
+  setAuctionSettled,
+  setFullAuction,
 } = auctionSlice.actions;
 
 export default auctionSlice.reducer;

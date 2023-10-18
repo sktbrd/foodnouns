@@ -5,12 +5,15 @@ import Leaderboard from '../../components/Leaderboard';
 import Settlements from '../../components/Settlements';
 import Contribution from '../../components/Contribution';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayAuction';
+import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayNounAuction';
 import { push } from 'connected-react-router';
 import { nounPath } from '../../utils/history';
-import useOnDisplayAuction from '../../wrappers/onDisplayAuction';
+import useOnDisplayNounAuction from '../../wrappers/onDisplayNounAuction';
+import useOnDisplayFoodNounAuction from '../../wrappers/onDisplayFoodNounAuction';
 import { useEffect } from 'react';
 import ProfileActivityFeed from '../../components/ProfileActivityFeed';
+import { setOnDisplayAuctionFoodNounId } from '../../state/slices/onDisplayFoodNounAuction';
+
 
 interface AuctionPageProps {
   initialAuctionId?: number;
@@ -18,41 +21,47 @@ interface AuctionPageProps {
 
 const AuctionPage: React.FC<AuctionPageProps> = props => {
   const { initialAuctionId } = props;
-  const onDisplayAuction = useOnDisplayAuction();
-  const lastAuctionNounId = useAppSelector(state => state.onDisplayAuction.lastAuctionNounId);
-  const onDisplayAuctionNounId = onDisplayAuction?.nounId.toNumber();
+  const onDisplayNounAuction = useOnDisplayNounAuction();
+  const onDisplayFoodNounAuction = useOnDisplayFoodNounAuction();
+  const lastAuctionFoodNounId = useAppSelector(state => state.onDisplayFoodNounAuction.lastAuctionFoodNounId);
+  const lastAuctionNounId = useAppSelector(state => state.onDisplayNounAuction.lastAuctionNounId);
+
+  const onDisplayAuctionNounId = onDisplayNounAuction?.nounId.toNumber();
+  const onDisplayAuctionFoodNounId = onDisplayFoodNounAuction?.nounId.toNumber();
+
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (!lastAuctionNounId) return;
+    if (!lastAuctionFoodNounId) return;
 
     if (initialAuctionId !== undefined) {
       // handle out of bounds noun path ids
-      if (initialAuctionId > lastAuctionNounId || initialAuctionId < 0) {
-        dispatch(setOnDisplayAuctionNounId(lastAuctionNounId));
-        dispatch(push(nounPath(lastAuctionNounId)));
+      if (initialAuctionId > lastAuctionFoodNounId || initialAuctionId < 0) {
+        dispatch(setOnDisplayAuctionNounId(lastAuctionFoodNounId));
+        dispatch(push(nounPath(lastAuctionFoodNounId)));
       } else {
-        if (onDisplayAuction === undefined) {
+        if (onDisplayFoodNounAuction === undefined) {
           // handle regular noun path ids on first load
-          dispatch(setOnDisplayAuctionNounId(initialAuctionId));
+          dispatch(setOnDisplayAuctionFoodNounId(initialAuctionId));
         }
       }
     } else {
       // no noun path id set
-      console.log(onDisplayAuction)
-      if (lastAuctionNounId) {
-        dispatch(setOnDisplayAuctionNounId(lastAuctionNounId));
+      console.log(onDisplayFoodNounAuction)
+      if (lastAuctionFoodNounId) {
+        dispatch(setOnDisplayAuctionFoodNounId(lastAuctionFoodNounId));
       }
     }
-  }, [lastAuctionNounId, dispatch, initialAuctionId, onDisplayAuction]);
+  }, [lastAuctionNounId, dispatch, initialAuctionId, onDisplayFoodNounAuction, lastAuctionFoodNounId]);
 
   return (
     <>
-      <Auction auction={onDisplayAuction} />
-      {onDisplayAuctionNounId !== undefined && onDisplayAuctionNounId !== lastAuctionNounId ? (
+      <Auction auction={onDisplayFoodNounAuction} />
+      <Auction auction={onDisplayNounAuction} />
+      {onDisplayAuctionFoodNounId !== undefined && onDisplayAuctionFoodNounId !== lastAuctionFoodNounId ? (
         <>
-          <ProfileActivityFeed nounId={onDisplayAuctionNounId} />
+          <ProfileActivityFeed nounId={onDisplayAuctionFoodNounId} />
           <Leaderboard tops={10} />
           <Contribution />
         </>

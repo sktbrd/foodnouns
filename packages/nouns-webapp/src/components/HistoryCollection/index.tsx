@@ -40,7 +40,7 @@ const HistoryCollection: React.FC<HistoryCollectionProps> = (props: HistoryColle
       <Container fluid>
         <Row className="justify-content-md-center">
           <div className={clsx(classes.historyCollection)}>
-            {config.app.enableHistory && nounsContent}
+            {config.foodnounsApp.enableHistory && nounsContent}
           </div>
         </Row>
       </Container>

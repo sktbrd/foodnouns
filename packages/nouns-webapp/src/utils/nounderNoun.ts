@@ -14,19 +14,20 @@ const emptyNounderAuction = (onDisplayAuctionId: number): Auction => {
     endTime: BigNumber.from(0).toJSON(),
     nounId: BigNumber.from(onDisplayAuctionId).toJSON(),
     settled: false,
+    nounAuction: false
   };
 };
 
-const findAuction = (id: BigNumber, auctions: AuctionState[], isFoodnoun = true): Auction | undefined => {
-  if (isFoodnoun) {
-    return auctions.find(auction => {
-      return BigNumber.from(auction.foodnouns.activeAuction?.nounId).eq(id);
-    })?.foodnouns.activeAuction;
-  } else {
-    return auctions.find(auction => {
-      return BigNumber.from(auction.nouns.activeAuction?.nounId).eq(id);
-    })?.nouns.activeAuction;
+const findAuction = (id: BigNumber, auctions: AuctionState[]): Auction | undefined => {
+  let auction = auctions.find(auction => {
+    return BigNumber.from(auction.activeFoodNounAuction?.nounId).eq(id);
+  })?.activeFoodNounAuction;
+  if (!auction) {
+    auction = auctions.find(auction => {
+      return BigNumber.from(auction.activeNounAuction?.nounId).eq(id);
+    })?.activeNounAuction;
   }
+  return auction
 };
 
 /**
@@ -38,11 +39,10 @@ const findAuction = (id: BigNumber, auctions: AuctionState[], isFoodnoun = true)
 export const generateEmptyNounderAuction = (
   nounId: BigNumber,
   pastAuctions: AuctionState[],
-  isFoodnoun = true,
 ): Auction => {
   const nounderAuction = emptyNounderAuction(nounId.toNumber());
   // use nounderAuction.nounId + 1 to get mint time
-  const auctionAbove = findAuction(nounId.add(1), pastAuctions, isFoodnoun);
+  const auctionAbove = findAuction(nounId.add(1), pastAuctions);
   const auctionAboveStartTime = auctionAbove && BigNumber.from(auctionAbove.startTime);
   if (auctionAboveStartTime) nounderAuction.startTime = auctionAboveStartTime.toJSON();
 

@@ -4,7 +4,7 @@ import React from 'react';
 import { XIcon } from '@heroicons/react/solid';
 import { Auction } from '../../wrappers/nounsAuction';
 import { StandaloneNounRoundedCorners } from '../StandaloneNoun';
-import { useAuctionBids } from '../../wrappers/onDisplayAuction';
+import { useFoodNounAuctionBids } from '../../wrappers/onDisplayFoodNounAuction';
 import { Bid } from '../../utils/types';
 import BidHistoryModalRow from '../BidHistoryModalRow';
 import { Trans } from '@lingui/macro';
@@ -19,7 +19,7 @@ const BidHistoryModalOverlay: React.FC<{
 }> = props => {
   const { onDismiss, auction } = props;
 
-  const bids = useAuctionBids(auction.nounId);
+  const bids = useFoodNounAuctionBids(auction.nounId);
 
   return (
     <>

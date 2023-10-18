@@ -6,7 +6,7 @@ import Noun from '../Noun';
 import { Link } from 'react-router-dom';
 import classes from './StandaloneNoun.module.css';
 import { useDispatch } from 'react-redux';
-import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayAuction';
+import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayNounAuction';
 import nounClasses from '../Noun/Noun.module.css';
 
 interface StandaloneNounProps {

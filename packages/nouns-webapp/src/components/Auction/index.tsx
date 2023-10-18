@@ -14,7 +14,7 @@ import { isNounderNoun } from '../../utils/nounderNoun';
 import {
   setNextOnDisplayAuctionNounId,
   setPrevOnDisplayAuctionNounId,
-} from '../../state/slices/onDisplayAuction';
+} from '../../state/slices/onDisplayNounAuction';
 import { beige, grey } from '../../utils/nounBgColors';
 
 interface AuctionProps {
@@ -26,8 +26,10 @@ const Auction: React.FC<AuctionProps> = props => {
 
   const history = useHistory();
   const dispatch = useAppDispatch();
-  let stateBgColor = useAppSelector(state => state.application.stateBackgroundColor);
-  const lastNounId = useAppSelector(state => state.onDisplayAuction.lastAuctionNounId);
+  const currentAuctionNoun = currentAuction?.nounAuction;
+  const isCurrentAuctionNoun = Boolean(currentAuctionNoun);
+  const stateBgColor = useAppSelector(state => state.application.stateBackgroundColor);
+  const lastNounId = useAppSelector(state => isCurrentAuctionNoun ? state.onDisplayNounAuction.lastAuctionNounId : state.onDisplayFoodNounAuction.lastAuctionFoodNounId);
 
   const loadedNounHandler = (seed: INounSeed) => {
     dispatch(setStateBackgroundColor(seed.background === 0 ? grey : beige));

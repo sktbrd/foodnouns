@@ -23,6 +23,7 @@ export interface Auction {
   startTime: EthersBN;
   nounId: EthersBN;
   settled: boolean;
+  nounAuction: boolean;
 }
 
 const abi = new utils.Interface(NounsAuctionHouseABI);
@@ -65,9 +66,9 @@ export const useNounCanVoteTimestamp = (nounId: number) => {
   const pastAuctions = useAppSelector(state => state.pastAuctions.pastAuctions);
 
   const maybeNounCanVoteTimestamp = pastAuctions.find((auction: AuctionState, i: number) => {
-    const maybeNounId = auction.foodnouns.activeAuction?.nounId;
+    const maybeNounId = auction.activeFoodNounAuction?.nounId;
     return maybeNounId ? EthersBN.from(maybeNounId).eq(EthersBN.from(nextNounIdForQuery)) : false;
-  })?.foodnouns.activeAuction?.startTime;
+  })?.activeFoodNounAuction?.startTime;
 
   if (!maybeNounCanVoteTimestamp) {
     // This state only occurs during loading flashes
