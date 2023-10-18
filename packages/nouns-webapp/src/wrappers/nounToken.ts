@@ -3,7 +3,7 @@ import { BigNumber as EthersBN, ethers, utils } from 'ethers';
 import { NounsTokenABI, NounsTokenFactory } from '@nouns/contracts';
 import config, { cache, cacheKey, CHAIN_ID } from '../config';
 import { useQuery } from '@apollo/client';
-import { seedsQuery } from './subgraph';
+import { clientFactory, seedsQuery } from './subgraph';
 import { useEffect } from 'react';
 
 interface NounToken {
@@ -69,15 +69,17 @@ const seedArrayToObject = (seeds: (INounSeed & { id: string })[]) => {
 export const useNounSeeds = () => {
   const cache = localStorage.getItem(seedCacheKey);
   const cachedSeeds = cache ? JSON.parse(cache) : undefined;
-  const { data } = useQuery(seedsQuery(), {
-    skip: !!cachedSeeds,
-  });
+  const nounclient = clientFactory(config.nounsApp.subgraphApiUri);
+  const { data: foodNounsData } = useQuery(seedsQuery());
+
+  const { data: nounsData, } = useQuery(seedsQuery());
 
   useEffect(() => {
-    if (!cachedSeeds && data?.seeds?.length) {
-      localStorage.setItem(seedCacheKey, JSON.stringify(seedArrayToObject(data.seeds)));
+    if (!cachedSeeds && foodNounsData?.seeds?.length && nounsData?.seeds?.length) {
+      const seeds = [...foodNounsData.seeds, ...nounsData.seeds];
+      localStorage.setItem(seedCacheKey, JSON.stringify(seedArrayToObject(seeds)));
     }
-  }, [data, cachedSeeds]);
+  }, [cachedSeeds, foodNounsData, nounsData]);
 
   return cachedSeeds;
 };

@@ -20,10 +20,12 @@ const emptyNounderAuction = (onDisplayAuctionId: number): Auction => {
 
 const findAuction = (id: BigNumber, auctions: AuctionState[]): Auction | undefined => {
   let auction = auctions.find(auction => {
+    if (!auction.activeFoodNounAuction) return undefined;
     return BigNumber.from(auction.activeFoodNounAuction?.nounId).eq(id);
   })?.activeFoodNounAuction;
   if (!auction) {
     auction = auctions.find(auction => {
+      if (!auction.activeNounAuction) return undefined;
       return BigNumber.from(auction.activeNounAuction?.nounId).eq(id);
     })?.activeNounAuction;
   }

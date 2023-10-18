@@ -5,7 +5,6 @@ import Leaderboard from '../../components/Leaderboard';
 import Settlements from '../../components/Settlements';
 import Contribution from '../../components/Contribution';
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayNounAuction';
 import { push } from 'connected-react-router';
 import { nounPath } from '../../utils/history';
 import useOnDisplayNounAuction from '../../wrappers/onDisplayNounAuction';
@@ -24,9 +23,9 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
   const onDisplayNounAuction = useOnDisplayNounAuction();
   const onDisplayFoodNounAuction = useOnDisplayFoodNounAuction();
   const lastAuctionFoodNounId = useAppSelector(state => state.onDisplayFoodNounAuction.lastAuctionFoodNounId);
-  const lastAuctionNounId = useAppSelector(state => state.onDisplayNounAuction.lastAuctionNounId);
 
-  const onDisplayAuctionNounId = onDisplayNounAuction?.nounId.toNumber();
+  console.log("on display acutions", onDisplayFoodNounAuction, onDisplayNounAuction)
+
   const onDisplayAuctionFoodNounId = onDisplayFoodNounAuction?.nounId.toNumber();
 
 
@@ -48,7 +47,6 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
       }
     } else {
       // no noun path id set
-      console.log(onDisplayFoodNounAuction)
       if (lastAuctionFoodNounId) {
         dispatch(setOnDisplayAuctionFoodNounId(lastAuctionFoodNounId));
       }

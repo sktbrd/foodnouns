@@ -53,7 +53,7 @@ const NounHoverCard: React.FC<NounHoverCardProps> = props => {
       {/* First Row */}
       <div className={classes.titleWrapper}>
         <div className={classes.nounWrapper}>
-          <StandaloneNounCircular nounId={BigNumber.from(nounId)} />
+          <StandaloneNounCircular nounId={BigNumber.from(nounId)} nounAuction={false} />
         </div>
         <div>
           <h1>Noun {nounId}</h1>

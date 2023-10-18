@@ -33,7 +33,7 @@ const BidHistoryModalOverlay: React.FC<{
         <div className={classes.content}>
           <div className={classes.header}>
             <div className={classes.nounWrapper}>
-              <StandaloneNounRoundedCorners nounId={auction && auction.nounId} />
+              <StandaloneNounRoundedCorners nounId={auction && auction.nounId} nounAuction={auction && auction.nounAuction} />
             </div>
 
             <div className={classes.title}>

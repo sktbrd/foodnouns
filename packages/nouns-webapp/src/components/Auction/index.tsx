@@ -37,15 +37,20 @@ const Auction: React.FC<AuctionProps> = props => {
   };
 
   const prevAuctionHandler = () => {
-    if (currentAuction?.nounAuction) dispatch(setPrevOnDisplayAuctionNounId());
-    else dispatch(setPrevOnDisplayAuctionFoodNounId());
-    dispatch(setPrevOnDisplayAuctionFoodNounId());
-    currentAuction && history.push(`/noun/${currentAuction.nounId.toNumber() - 1}`);
+    if (currentAuction?.nounAuction)
+      dispatch(setPrevOnDisplayAuctionNounId());
+    else {
+      dispatch(setPrevOnDisplayAuctionFoodNounId());
+      currentAuction && history.push(`/noun/${currentAuction.nounId.toNumber() - 1}`);
+    }
   };
   const nextAuctionHandler = () => {
-    if (currentAuction?.nounAuction) dispatch(setNextOnDisplayAuctionNounId());
-    else dispatch(setNextOnDisplayAuctionFoodNounId());
-    currentAuction && history.push(`/noun/${currentAuction.nounId.toNumber() + 1}`);
+    if (currentAuction?.nounAuction)
+      dispatch(setNextOnDisplayAuctionNounId());
+    else {
+      dispatch(setNextOnDisplayAuctionFoodNounId());
+      currentAuction && history.push(`/noun/${currentAuction.nounId.toNumber() + 1}`);
+    }
   };
 
   const nounContent = currentAuction && (
@@ -54,6 +59,7 @@ const Auction: React.FC<AuctionProps> = props => {
         nounId={currentAuction.nounId}
         onLoadSeed={loadedNounHandler}
         shouldLinkToProfile={false}
+        nounAuction={currentAuction.nounAuction}
       />
     </div>
   );
