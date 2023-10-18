@@ -38,7 +38,7 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
     if (initialAuctionId !== undefined) {
       // handle out of bounds noun path ids
       if (initialAuctionId > lastAuctionFoodNounId || initialAuctionId < 0) {
-        dispatch(setOnDisplayAuctionNounId(lastAuctionFoodNounId));
+        dispatch(setOnDisplayAuctionFoodNounId(lastAuctionFoodNounId));
         dispatch(push(nounPath(lastAuctionFoodNounId)));
       } else {
         if (onDisplayFoodNounAuction === undefined) {
@@ -53,7 +53,7 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
         dispatch(setOnDisplayAuctionFoodNounId(lastAuctionFoodNounId));
       }
     }
-  }, [lastAuctionNounId, dispatch, initialAuctionId, onDisplayFoodNounAuction, lastAuctionFoodNounId]);
+  }, [dispatch, initialAuctionId, onDisplayFoodNounAuction, lastAuctionFoodNounId]);
 
   return (
     <>
