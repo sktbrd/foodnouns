@@ -23,7 +23,7 @@ const HorizontalStackedNouns: React.FC<HorizontalStackedNounsProps> = props => {
               }}
               className={classes.nounWrapper}
             >
-              <StandaloneNounCircular nounId={BigNumber.from(nounId)} border={true} />
+              <StandaloneNounCircular nounId={BigNumber.from(nounId)} border={true} nounAuction={false} />
             </div>
           );
         })

@@ -1,4 +1,5 @@
-import { ImageData as data, getNounData } from '@nouns/assets';
+import { ImageData as foodNoundata, getNounData as getFoodNounData } from '@nouns/assets';
+import { ImageData as nounData, getNounData } from '@nouns/assets-latest';
 import { buildSVG } from '@nouns/sdk';
 import { BigNumber as EthersBN } from 'ethers';
 import { INounSeed, useNounSeed } from '../../wrappers/nounToken';
@@ -6,29 +7,33 @@ import Noun from '../Noun';
 import { Link } from 'react-router-dom';
 import classes from './StandaloneNoun.module.css';
 import { useDispatch } from 'react-redux';
-import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayAuction';
+import { setOnDisplayAuctionNounId } from '../../state/slices/onDisplayNounAuction';
 import nounClasses from '../Noun/Noun.module.css';
 
 interface StandaloneNounProps {
   nounId: EthersBN;
+  nounAuction: boolean;
 }
 interface StandaloneCircularNounProps {
   nounId: EthersBN;
   border?: boolean;
+  nounAuction: boolean;
 }
 
 interface StandaloneNounWithSeedProps {
   nounId: EthersBN;
   onLoadSeed?: (seed: INounSeed) => void;
   shouldLinkToProfile: boolean;
+  nounAuction: boolean;
 }
 
-export const getNoun = (nounId: string | EthersBN, seed: INounSeed) => {
+export const getNoun = (nounId: string | EthersBN, seed: INounSeed, nounAuction: boolean) => {
   const id = nounId.toString();
-  const name = `Foodnoun ${id}`;
+  const name = (nounAuction ? 'Noun' : 'Foodnoun') + ` ${id}`;
   const description = `Foodnoun ${id} is a member of the Foodnouns DAO`;
-  const { parts, background } = getNounData(seed);
-  const image = `data:image/svg+xml;base64,${btoa(buildSVG(parts, data.palette, background))}`;
+  const { parts, background } = nounAuction ? getNounData(seed) : getFoodNounData(seed);
+  const image = `data:image/svg+xml;base64,${btoa(buildSVG(parts, nounAuction ?
+    nounData.palette : foodNoundata.palette, background))}`;
 
   return {
     name,
@@ -39,9 +44,9 @@ export const getNoun = (nounId: string | EthersBN, seed: INounSeed) => {
 };
 
 const StandaloneNoun: React.FC<StandaloneNounProps> = (props: StandaloneNounProps) => {
-  const { nounId } = props;
+  const { nounId, nounAuction } = props;
   const seed = useNounSeed(nounId);
-  const noun = seed && getNoun(nounId, seed);
+  const noun = seed && getNoun(nounId, seed, nounAuction);
 
   const dispatch = useDispatch();
 
@@ -63,9 +68,9 @@ const StandaloneNoun: React.FC<StandaloneNounProps> = (props: StandaloneNounProp
 export const StandaloneNounCircular: React.FC<StandaloneCircularNounProps> = (
   props: StandaloneCircularNounProps,
 ) => {
-  const { nounId, border } = props;
+  const { nounId, border, nounAuction } = props;
   const seed = useNounSeed(nounId);
-  const noun = seed && getNoun(nounId, seed);
+  const noun = seed && getNoun(nounId, seed, nounAuction);
 
   const dispatch = useDispatch();
   const onClickHandler = () => {
@@ -93,9 +98,9 @@ export const StandaloneNounCircular: React.FC<StandaloneCircularNounProps> = (
 export const StandaloneNounRoundedCorners: React.FC<StandaloneNounProps> = (
   props: StandaloneNounProps,
 ) => {
-  const { nounId } = props;
+  const { nounId, nounAuction } = props;
   const seed = useNounSeed(nounId);
-  const noun = seed && getNoun(nounId, seed);
+  const noun = seed && getNoun(nounId, seed, nounAuction);
 
   const dispatch = useDispatch();
   const onClickHandler = () => {
@@ -120,7 +125,7 @@ export const StandaloneNounRoundedCorners: React.FC<StandaloneNounProps> = (
 export const StandaloneNounWithSeed: React.FC<StandaloneNounWithSeedProps> = (
   props: StandaloneNounWithSeedProps,
 ) => {
-  const { nounId, onLoadSeed, shouldLinkToProfile } = props;
+  const { nounId, onLoadSeed, shouldLinkToProfile, nounAuction } = props;
 
   const dispatch = useDispatch();
   const seed = useNounSeed(nounId);
@@ -134,7 +139,7 @@ export const StandaloneNounWithSeed: React.FC<StandaloneNounWithSeedProps> = (
     dispatch(setOnDisplayAuctionNounId(nounId.toNumber()));
   };
 
-  const { image, description, parts } = getNoun(nounId, seed);
+  const { image, description, parts } = getNoun(nounId, seed, nounAuction);
 
   const noun = <Noun imgPath={image} alt={description} parts={parts} />;
   const nounWithLink = (

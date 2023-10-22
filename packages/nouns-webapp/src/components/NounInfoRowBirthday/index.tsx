@@ -16,12 +16,17 @@ interface NounInfoRowBirthdayProps {
 }
 
 export const getNounBirthday = (nounId: number, pastAuctions: AuctionState[]) => {
-  return BigNumber.from(
-    pastAuctions.find((auction: AuctionState, i: number) => {
-      const maybeNounId = auction.activeAuction?.nounId;
+  let bday = pastAuctions.find((auction: AuctionState, i: number) => {
+    const maybeNounId = auction.activeFoodNounAuction?.nounId;
+    return maybeNounId ? BigNumber.from(maybeNounId).eq(BigNumber.from(nounId)) : false;
+  })?.activeFoodNounAuction?.startTime || 0;
+  if (bday === 0) {
+    bday = pastAuctions.find((auction: AuctionState, i: number) => {
+      const maybeNounId = auction.activeNounAuction?.nounId;
       return maybeNounId ? BigNumber.from(maybeNounId).eq(BigNumber.from(nounId)) : false;
-    })?.activeAuction?.startTime || 0,
-  );
+    })?.activeNounAuction?.startTime || 0;
+  }
+  return BigNumber.from(bday);
 };
 
 const NounInfoRowBirthday: React.FC<NounInfoRowBirthdayProps> = props => {

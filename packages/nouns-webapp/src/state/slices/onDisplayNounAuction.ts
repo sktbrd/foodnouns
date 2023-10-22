@@ -10,8 +10,8 @@ const initialState: OnDisplayAuctionState = {
   onDisplayAuctionNounId: undefined,
 };
 
-const onDisplayAuction = createSlice({
-  name: 'onDisplayAuction',
+const onDisplayNounAuction = createSlice({
+  name: 'onDisplayNounAuction',
   initialState: initialState,
   reducers: {
     setLastAuctionNounId: (state, action: PayloadAction<number>) => {
@@ -38,6 +38,6 @@ export const {
   setOnDisplayAuctionNounId,
   setPrevOnDisplayAuctionNounId,
   setNextOnDisplayAuctionNounId,
-} = onDisplayAuction.actions;
+} = onDisplayNounAuction.actions;
 
-export default onDisplayAuction.reducer;
+export default onDisplayNounAuction.reducer;

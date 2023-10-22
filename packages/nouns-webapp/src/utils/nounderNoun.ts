@@ -14,13 +14,22 @@ const emptyNounderAuction = (onDisplayAuctionId: number): Auction => {
     endTime: BigNumber.from(0).toJSON(),
     nounId: BigNumber.from(onDisplayAuctionId).toJSON(),
     settled: false,
+    nounAuction: false
   };
 };
 
 const findAuction = (id: BigNumber, auctions: AuctionState[]): Auction | undefined => {
-  return auctions.find(auction => {
-    return BigNumber.from(auction.activeAuction?.nounId).eq(id);
-  })?.activeAuction;
+  let auction = auctions.find(auction => {
+    if (!auction.activeFoodNounAuction) return undefined;
+    return BigNumber.from(auction.activeFoodNounAuction?.nounId).eq(id);
+  })?.activeFoodNounAuction;
+  if (!auction) {
+    auction = auctions.find(auction => {
+      if (!auction.activeNounAuction) return undefined;
+      return BigNumber.from(auction.activeNounAuction?.nounId).eq(id);
+    })?.activeNounAuction;
+  }
+  return auction
 };
 
 /**

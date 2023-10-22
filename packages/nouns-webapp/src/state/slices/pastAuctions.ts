@@ -10,12 +10,12 @@ const initialState: PastAuctionsState = {
   pastAuctions: [],
 };
 
-const reduxSafePastAuctions = (data: any): AuctionState[] => {
-  const auctions = data.data.auctions as any[];
+const reduxSafePastAuctions = (data: any, nounAuction = false): AuctionState[] => {
+  const auctions = data.auctions as any[];
   if (auctions.length < 0) return [];
-  const pastAuctions: AuctionState[] = auctions.map(auction => {
+  const pastAuctions: any = auctions.map(auction => {
     return {
-      activeAuction: {
+      [nounAuction ? `activeNounAuction` : `activeFoodNounAuction`]: {
         amount: BigNumber.from(auction.amount).toJSON(),
         bidder: auction.bidder ? auction.bidder.id : '',
         startTime: BigNumber.from(auction.startTime).toJSON(),
@@ -23,13 +23,14 @@ const reduxSafePastAuctions = (data: any): AuctionState[] => {
         nounId: BigNumber.from(auction.id).toJSON(),
         settled: false,
       },
-      bids: auction.bids.map((bid: any) => {
+      [nounAuction ? `nounBids` : `foodnounBids`]: auction.bids.map((bid: any) => {
         return {
           nounId: BigNumber.from(auction.id).toJSON(),
           sender: bid.bidder.id,
           value: BigNumber.from(bid.amount).toJSON(),
           extended: false,
           transactionHash: bid.id,
+          transactionIndex: Number(bid.txIndex),
           timestamp: BigNumber.from(bid.blockTimestamp).toJSON(),
         };
       }),
@@ -42,12 +43,15 @@ const pastAuctionsSlice = createSlice({
   name: 'pastAuctions',
   initialState: initialState,
   reducers: {
-    addPastAuctions: (state, action: PayloadAction<any>) => {
-      state.pastAuctions = reduxSafePastAuctions(action.payload);
+    addPastNounAuctions: (state, action: PayloadAction<any>) => {
+      state.pastAuctions = state.pastAuctions.concat(reduxSafePastAuctions(action.payload, true))
+    },
+    addPastFoodNounAuctions: (state, action: PayloadAction<any>) => {
+      state.pastAuctions = state.pastAuctions.concat(reduxSafePastAuctions(action.payload))
     },
   },
 });
 
-export const { addPastAuctions } = pastAuctionsSlice.actions;
+export const { addPastNounAuctions, addPastFoodNounAuctions } = pastAuctionsSlice.actions;
 
 export default pastAuctionsSlice.reducer;
